@@ -1,16 +1,15 @@
 const skills = [
-  { name: 'Figma', emoji: '🎨', bg: 'bg-sage' },
-  { name: 'Photoshop', emoji: '🖼️', bg: 'bg-lavender' },
-  { name: 'Illustrator', emoji: '✏️', bg: 'bg-peach' },
-  { name: 'User Research', emoji: '🔍', bg: 'bg-cream' },
-  { name: 'Wireframing', emoji: '📐', bg: 'bg-soft-pink' },
-  { name: 'Prototyping', emoji: '⚡', bg: 'bg-sage' },
-  { name: 'Typography', emoji: '🔤', bg: 'bg-lavender' },
-  { name: 'Design Systems', emoji: '🧩', bg: 'bg-peach' },
-  { name: 'HTML/CSS', emoji: '💻', bg: 'bg-cream' },
-  { name: 'Motion Design', emoji: '🎬', bg: 'bg-soft-pink' },
-  { name: 'Branding', emoji: '✨', bg: 'bg-sage' },
-  { name: 'Accessibility', emoji: '♿', bg: 'bg-lavender' },
+  { name: 'Figma', bg: 'bg-sage' },
+  { name: 'Photoshop', bg: 'bg-lavender' },
+  { name: 'Illustrator', bg: 'bg-peach' },
+      { name: 'Premiere Pro' bg: 'bg-cream' },
+  { name: 'After Effect', bg: 'bg-soft-pink' },
+  { name: 'WordPress', bg: 'bg-sage' },
+  { name: 'PHP', bg: 'bg-lavender' },
+  { name: 'Javascript', bg: 'bg-peach' },
+  { name: 'HTML/CSS', bg: 'bg-cream' },
+  { name: 'Anglais', bg: 'bg-soft-pink' },
+  { name: 'Japonais', bg: 'bg-sage' },
 ];
 
 const SkillsCollection = () => (
