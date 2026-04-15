@@ -19,7 +19,7 @@ const Footer = () => (
           rel="noreferrer"
           className="pill-tag text-sm px-5 py-2 hover:bg-lavender transition-colors"
         >
-          in LinkedIn
+          LinkedIn
         </a>
       </div>
 
