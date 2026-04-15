@@ -14,18 +14,18 @@ const skills = [
 ];
 
 const SkillsCollection = () => (
-  <div className="w-full max-w-3xl mx-auto py-12 px-4">
-    <p className="font-display text-xs text-muted-foreground tracking-[0.2em] uppercase mb-6 text-center">
+  <div className="w-full max-w-4xl mx-auto py-16 px-6">
+    <p className="font-display text-sm text-muted-foreground tracking-[0.2em] uppercase mb-8 text-center">
       ✦ collectibles ✦
     </p>
-    <div className="flex flex-wrap justify-center gap-3">
+    <div className="flex flex-wrap justify-center gap-4">
       {skills.map((skill, i) => (
         <div
           key={skill.name}
-          className={`sticker pill-tag ${skill.bg} border-transparent cursor-default`}
+          className={`sticker pill-tag ${skill.bg} border-transparent cursor-default text-sm px-5 py-2`}
           style={{ animationDelay: `${i * 0.05}s` }}
         >
-          <span>{skill.emoji}</span>
+          <span className="text-lg">{skill.emoji}</span>
           <span className="text-foreground">{skill.name}</span>
         </div>
       ))}
