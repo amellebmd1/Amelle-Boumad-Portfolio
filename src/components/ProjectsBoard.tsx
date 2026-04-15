@@ -5,23 +5,23 @@ import project3 from '@/assets/project-3.jpg';
 
 const projects = [
   {
-    title: 'Slerting — Mobile App',
-    description: 'A wellness app designed to help users build mindful daily routines. Focused on gentle onboarding and intuitive navigation.',
-    role: 'UX/UI Designer',
-    tools: ['Figma', 'Prototyping', 'User Research'],
+    title: 'ADECAWEB — Refonte Site Web',
+    description: 'Refonte du site web pour association étudiante ADECAWEB sur Wordpress. ',
+    role: 'Web Developpeur',
+    tools: ['Figma', 'WordPress', 'HTML/CSS'],
     image: project1,
   },
   {
-    title: 'Rcotile — Website Redesign',
-    description: 'Responsive e-commerce redesign with a playful, accessible interface. Desktop and mobile-first approach.',
-    role: 'UI Designer',
-    tools: ['Figma', 'HTML/CSS', 'Design System'],
+    title: 'Interview étudiants LEA - Série de vidéos',
+    description: 'Série de videos interviews dans le cadre de la promotion de la licence LEA.'
+    role: 'Monteur',
+    tools: ['Premiere Pro', 'Traduction', 'Sous-titrage'],
     image: project2,
   },
   {
-    title: 'Bronnatce — Brand Identity',
-    description: 'Complete brand identity system including logo, typography, color palette, and stationery design for a luxury wellness brand.',
-    role: 'Brand Designer',
+    title: 'Interview étudiants LEA — Affiches',
+    description: 'Affiches pour promouvoir la série de vidéos',
+    role: 'Designeur'
     tools: ['Illustrator', 'Photoshop', 'Typography'],
     image: project3,
   },
