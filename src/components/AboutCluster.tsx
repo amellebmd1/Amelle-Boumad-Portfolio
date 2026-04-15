@@ -23,8 +23,8 @@ const AboutCluster = () => (
       <MiniWindow title="education.md" className="animate-fade-in-up">
         <div className="space-y-3 text-sm">
           <div>
-            <p className="font-display text-foreground">Design School</p>
-            <p className="text-muted-foreground">Bachelor UX/UI Design — 2024</p>
+            <p className="font-display text-foreground">Université de Strasbourg</p>
+            <p className="text-muted-foreground">Master CAWEB (communication web multilingue) 2025 - 2027 </p>
           </div>
           <div>
             <p className="font-display text-foreground">Online Courses</p>
