@@ -15,11 +15,11 @@
     --popover: 40 30% 97%;
     --popover-foreground: 220 20% 18%;
 
-    --primary: 340 60% 65%;
+    --primary: 145 35% 50%;
     --primary-foreground: 40 33% 96%;
 
-    --secondary: 330 40% 88%;
-    --secondary-foreground: 330 30% 30%;
+    --secondary: 340 50% 85%;
+    --secondary-foreground: 340 30% 30%;
 
     --muted: 40 20% 92%;
     --muted-foreground: 220 10% 50%;
@@ -32,20 +32,20 @@
 
     --border: 40 20% 88%;
     --input: 40 20% 88%;
-    --ring: 340 60% 65%;
+    --ring: 145 35% 50%;
 
     --radius: 1rem;
 
     /* Custom tokens */
-    --sage: 100 25% 78%;
-    --sage-dark: 100 20% 45%;
+    --sage: 145 25% 78%;
+    --sage-dark: 145 20% 45%;
     --lavender: 250 30% 88%;
     --peach: 20 60% 90%;
     --cream: 40 40% 95%;
-    --soft-pink: 340 50% 92%;
-    --window-bg: 340 20% 98%;
-    --window-border: 340 15% 88%;
-    --window-header: 340 25% 94%;
+    --soft-pink: 340 50% 90%;
+    --window-bg: 40 30% 98%;
+    --window-border: 340 20% 88%;
+    --window-header: 145 20% 92%;
     --grain-opacity: 0.03;
 
     --font-display: 'Space Mono', monospace;
