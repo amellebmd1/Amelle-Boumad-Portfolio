@@ -12,7 +12,7 @@ const AboutCluster = () => (
             <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
               Etudiante en Master CAWEB (communication web et multilingue)
               <br />
-              je suis à la recherche d'une première opportunité.
+              je suis à la recherche d'une première opportunité
               <br />
               dans le domaine du web.
             </p>
