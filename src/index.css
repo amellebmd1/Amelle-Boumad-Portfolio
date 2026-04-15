@@ -15,10 +15,10 @@
     --popover: 40 30% 97%;
     --popover-foreground: 220 20% 18%;
 
-    --primary: 100 30% 45%;
+    --primary: 340 60% 65%;
     --primary-foreground: 40 33% 96%;
 
-    --secondary: 330 25% 85%;
+    --secondary: 330 40% 88%;
     --secondary-foreground: 330 30% 30%;
 
     --muted: 40 20% 92%;
@@ -32,7 +32,7 @@
 
     --border: 40 20% 88%;
     --input: 40 20% 88%;
-    --ring: 100 30% 45%;
+    --ring: 340 60% 65%;
 
     --radius: 1rem;
 
@@ -42,10 +42,10 @@
     --lavender: 250 30% 88%;
     --peach: 20 60% 90%;
     --cream: 40 40% 95%;
-    --soft-pink: 330 30% 90%;
-    --window-bg: 40 30% 98%;
-    --window-border: 40 15% 85%;
-    --window-header: 100 20% 90%;
+    --soft-pink: 340 50% 92%;
+    --window-bg: 340 20% 98%;
+    --window-border: 340 15% 88%;
+    --window-header: 340 25% 94%;
     --grain-opacity: 0.03;
 
     --font-display: 'Space Mono', monospace;
