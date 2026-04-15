@@ -13,7 +13,7 @@ const projects = [
   },
   {
     title: 'Interview étudiants LEA - Série de vidéos',
-    description: 'Série de videos interviews dans le cadre de la promotion de la licence LEA.'
+    description: 'Série de videos interviews dans le cadre de la promotion de la licence LEA.',
     role: 'Monteur',
     tools: ['Premiere Pro', 'Traduction', 'Sous-titrage'],
     image: project2,
@@ -21,7 +21,7 @@ const projects = [
   {
     title: 'Interview étudiants LEA — Affiches',
     description: 'Affiches pour promouvoir la série de vidéos',
-    role: 'Designeur'
+    role: 'Designeur',
     tools: ['Illustrator', 'Photoshop', 'Typography'],
     image: project3,
   },
