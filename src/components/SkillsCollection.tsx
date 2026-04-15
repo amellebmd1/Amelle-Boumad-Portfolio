@@ -25,7 +25,6 @@ const SkillsCollection = () => (
           style={{ animationDelay: `${i * 0.05}s` }}
         >
           <span className="text-foreground">{skill.name}</span>
-          <span className="text-foreground">{skill.name}</span>
         </div>
       ))}
     </div>
