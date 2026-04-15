@@ -17,21 +17,23 @@ interface TrinketData {
   x: number;
   y: number;
   rotation: number;
+  anim: string;
+  duration: string;
 }
 
 const initialTrinkets: TrinketData[] = [
-  { id: 0, src: miffy, alt: 'miffy', size: 100, x: 5, y: 10, rotation: -5 },
-  { id: 1, src: helloKitty, alt: 'hello kitty', size: 90, x: 85, y: 15, rotation: 8 },
-  { id: 2, src: sonnyAngel, alt: 'angel', size: 95, x: 8, y: 45, rotation: -3 },
-  { id: 3, src: pinkApple, alt: 'apple', size: 80, x: 90, y: 35, rotation: 12 },
-  { id: 4, src: pinkHeart, alt: 'heart', size: 70, x: 15, y: 70, rotation: -8 },
-  { id: 5, src: pinkBow, alt: 'bow', size: 85, x: 82, y: 60, rotation: 5 },
-  { id: 6, src: clover, alt: 'clover', size: 65, x: 50, y: 8, rotation: 15 },
-  { id: 7, src: star, alt: 'star', size: 55, x: 70, y: 80, rotation: -12 },
-  { id: 8, src: cdDisc, alt: 'cd', size: 75, x: 3, y: 88, rotation: 0 },
-  { id: 9, src: star, alt: 'star', size: 45, x: 40, y: 55, rotation: 20 },
-  { id: 10, src: pinkHeart, alt: 'heart', size: 50, x: 60, y: 25, rotation: -15 },
-  { id: 11, src: miffy, alt: 'miffy', size: 70, x: 92, y: 85, rotation: 10 },
+  { id: 0, src: miffy, alt: 'miffy', size: 100, x: 5, y: 10, rotation: -5, anim: 'float', duration: '6s' },
+  { id: 1, src: helloKitty, alt: 'hello kitty', size: 90, x: 85, y: 15, rotation: 8, anim: 'float-slow', duration: '8s' },
+  { id: 2, src: sonnyAngel, alt: 'angel', size: 95, x: 8, y: 45, rotation: -3, anim: 'float', duration: '7s' },
+  { id: 3, src: pinkApple, alt: 'apple', size: 80, x: 90, y: 35, rotation: 12, anim: 'float-slow', duration: '9s' },
+  { id: 4, src: pinkHeart, alt: 'heart', size: 70, x: 15, y: 70, rotation: -8, anim: 'float', duration: '5s' },
+  { id: 5, src: pinkBow, alt: 'bow', size: 85, x: 82, y: 60, rotation: 5, anim: 'float-slow', duration: '7s' },
+  { id: 6, src: clover, alt: 'clover', size: 65, x: 50, y: 8, rotation: 15, anim: 'float', duration: '6s' },
+  { id: 7, src: star, alt: 'star', size: 55, x: 70, y: 80, rotation: -12, anim: 'sparkle', duration: '3s' },
+  { id: 8, src: cdDisc, alt: 'cd', size: 75, x: 3, y: 88, rotation: 0, anim: 'spin-slow', duration: '20s' },
+  { id: 9, src: star, alt: 'star', size: 45, x: 40, y: 55, rotation: 20, anim: 'sparkle', duration: '4s' },
+  { id: 10, src: pinkHeart, alt: 'heart', size: 50, x: 60, y: 25, rotation: -15, anim: 'float', duration: '5.5s' },
+  { id: 11, src: miffy, alt: 'miffy', size: 70, x: 92, y: 85, rotation: 10, anim: 'float-slow', duration: '8s' },
 ];
 
 const DraggableTrinket = ({ trinket }: { trinket: TrinketData }) => {
@@ -91,6 +93,8 @@ const DraggableTrinket = ({ trinket }: { trinket: TrinketData }) => {
         zIndex: dragging ? 50 : 1,
         filter: dragging ? 'drop-shadow(0 10px 20px rgba(0,0,0,0.18))' : 'drop-shadow(0 3px 6px rgba(0,0,0,0.1))',
         transition: dragging ? 'none' : 'transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease',
+        animation: dragging ? 'none' : `${trinket.anim} ${trinket.duration} ease-in-out infinite`,
+        animationDelay: `${trinket.id * 0.4}s`,
       }}
     />
   );
