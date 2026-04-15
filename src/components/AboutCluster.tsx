@@ -5,18 +5,11 @@ const AboutCluster = () => (
   <div className="relative w-full max-w-5xl mx-auto py-20 px-6">
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
       <MiniWindow title="about_me.txt" className="animate-fade-in-up">
-        <div className="flex flex-col items-center text-center gap-4">
-          <div className="w-36 h-36 rounded-full overflow-hidden border-3 border-border"></div>
-          <div>
-            <h2 className="font-display text-base">Amelle Boumad</h2>
-            <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
-              Etudiante en Master CAWEB (communication web et multilingue)
-              <br />
-              je suis à la recherche d'une première opportunité
-              <br />
-              dans le domaine du web.
-            </p>
-          </div>
+        <div className="text-center">
+          <h2 className="font-display text-base">Amelle Boumad</h2>
+          <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
+            Etudiante en Master CAWEB (communication web et multilingue), je suis à la recherche d'une première opportunité dans le domaine du web.
+          </p>
         </div>
       </MiniWindow>
 
