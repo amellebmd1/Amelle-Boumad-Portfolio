@@ -6,9 +6,7 @@ const AboutCluster = () => (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
       <MiniWindow title="about_me.txt" className="animate-fade-in-up">
         <div className="flex flex-col items-center text-center gap-4">
-          <div className="w-36 h-36 rounded-full overflow-hidden border-3 border-border">
-            <img src={profilePhoto} alt="Amelle Boumad" className="w-full h-full object-cover" />
-          </div>
+          <div className="w-36 h-36 rounded-full overflow-hidden border-3 border-border"></div>
           <div>
             <h2 className="font-display text-base">Amelle Boumad</h2>
             <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
