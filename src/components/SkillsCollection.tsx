@@ -2,7 +2,7 @@ const skills = [
   { name: 'Figma', bg: 'bg-sage' },
   { name: 'Photoshop', bg: 'bg-lavender' },
   { name: 'Illustrator', bg: 'bg-peach' },
-      { name: 'Premiere Pro' bg: 'bg-cream' },
+      { name: 'Premiere Pro', bg: 'bg-cream' },
   { name: 'After Effect', bg: 'bg-soft-pink' },
   { name: 'WordPress', bg: 'bg-sage' },
   { name: 'PHP', bg: 'bg-lavender' },
