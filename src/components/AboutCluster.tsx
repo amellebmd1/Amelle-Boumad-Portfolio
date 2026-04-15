@@ -1,5 +1,5 @@
-import MiniWindow from './MiniWindow';
-import profilePhoto from '@/assets/profile-photo.jpg';
+import MiniWindow from "./MiniWindow";
+import profilePhoto from "@/assets/profile-photo.jpg";
 
 const AboutCluster = () => (
   <div className="relative w-full max-w-5xl mx-auto py-20 px-6">
@@ -12,9 +12,11 @@ const AboutCluster = () => (
           <div>
             <h2 className="font-display text-base">Amelle Boumad</h2>
             <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
-              UX/UI Designer based in Paris.
-              <br />Detail-oriented. Visually sensitive.
-              <br />Ready for my first opportunity ✦
+              Etudiante en Master CAWEB (communication web et multilingue)
+              <br />
+              je suis à la recherche d'une première opportunité.
+              <br />
+              dans le domaine du web.
             </p>
           </div>
         </div>
@@ -33,7 +35,11 @@ const AboutCluster = () => (
         </div>
       </MiniWindow>
 
-      <MiniWindow title="experience.log" className="animate-fade-in-up" dotColors={['bg-soft-pink', 'bg-lavender', 'bg-sage']}>
+      <MiniWindow
+        title="experience.log"
+        className="animate-fade-in-up"
+        dotColors={["bg-soft-pink", "bg-lavender", "bg-sage"]}
+      >
         <div className="space-y-3 text-sm">
           <div>
             <p className="font-display text-foreground">Freelance Projects</p>
