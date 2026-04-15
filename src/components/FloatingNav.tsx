@@ -15,7 +15,7 @@ const FloatingNav = () => {
 
   return (
     <nav
-      className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[60] flex items-center gap-1 px-3 py-2 rounded-full bg-card/80 backdrop-blur-md border border-border shadow-lg"
+      className="fixed top-4 left-1/2 -translate-x-1/2 z-[60] flex items-center gap-1 px-3 py-2 rounded-full bg-card/80 backdrop-blur-md border border-border shadow-lg"
     >
       {sections.map(s => (
         <button
