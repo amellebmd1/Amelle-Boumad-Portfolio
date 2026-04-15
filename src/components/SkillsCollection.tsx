@@ -24,7 +24,7 @@ const SkillsCollection = () => (
           className={`sticker pill-tag ${skill.bg} border-transparent cursor-default text-sm px-5 py-2`}
           style={{ animationDelay: `${i * 0.05}s` }}
         >
-          <span className="text-lg">{skill.emoji}</span>
+          <span className="text-foreground">{skill.name}</span>
           <span className="text-foreground">{skill.name}</span>
         </div>
       ))}
