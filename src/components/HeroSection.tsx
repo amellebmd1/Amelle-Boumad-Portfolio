@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import star from '@/assets/star.png';
 import clover from '@/assets/clover.png';
 import cdDisc from '@/assets/cd-disc.png';
+import pinkBow from '@/assets/pink-bow.png';
 
 interface HeroSectionProps {
   onEnter: () => void;
@@ -36,13 +37,20 @@ const HeroSection = ({ onEnter }: HeroSectionProps) => {
       <img src={star} alt="" className="absolute w-16 bottom-[30%] right-[20%] opacity-15 blur-sm animate-float" style={{ animationDelay: '1s' }} />
 
       {/* Center content */}
-      <div className="text-center z-10 space-y-6">
+      <div className="text-center z-10 flex flex-col items-center gap-6">
         <p className="font-display text-sm tracking-[0.3em] text-muted-foreground uppercase">
           UX/UI Designer
         </p>
-        <h1 className="font-display text-5xl md:text-7xl tracking-tight text-foreground">
-          Amelle Boumad
-        </h1>
+
+        {/* Name with bows aligned on each side */}
+        <div className="flex items-center gap-5">
+          <img src={pinkBow} alt="" className="w-14 md:w-16 opacity-70 animate-float" />
+          <h1 className="font-display text-5xl md:text-7xl tracking-tight text-foreground">
+            Amelle Boumad
+          </h1>
+          <img src={pinkBow} alt="" className="w-14 md:w-16 opacity-70 animate-float" style={{ animationDelay: '0.5s', transform: 'scaleX(-1)' }} />
+        </div>
+
         <p className="font-display text-sm tracking-[0.2em] text-muted-foreground">
           — Portfolio —
         </p>
