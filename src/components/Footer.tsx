@@ -14,7 +14,7 @@ const Footer = () => (
           ✉ Email
         </a>
         <a
-          href="www.linkedin.com/in/amelle-boumad"
+          href="https://www.linkedin.com/in/amelle-boumad/"
           target="_blank"
           rel="noreferrer"
           className="pill-tag text-sm px-5 py-2 hover:bg-lavender transition-colors"
