@@ -12,8 +12,8 @@ const Index = () => {
 
   return (
     <div className="grain min-h-screen relative">
-      {/* Trinkets visible from the start */}
       <FloatingTrinkets />
+      <FloatingNav />
 
       <HeroSection onEnter={() => setEntered(true)} />
 
@@ -22,7 +22,6 @@ const Index = () => {
           entered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8 pointer-events-none'
         }`}
       >
-        <FloatingNav />
 
         <main className="relative z-10 pt-8">
           <section id="about">
