@@ -23,12 +23,12 @@ const AboutCluster = () => (
       <MiniWindow title="education.md" className="animate-fade-in-up">
         <div className="space-y-3 text-sm">
           <div>
-            <p className="font-display text-foreground">Université de Strasbourg</p>
-            <p className="text-muted-foreground">Master CAWEB (communication web multilingue) 2025 - 2027 </p>
+            <p className="font-display text-foreground">Master CAWEB (communication web multilingue)</p>
+            <p className="text-muted-foreground"> Université de Strasbourg - 2025 - 2027 </p>
           </div>
           <div>
-            <p className="font-display text-foreground">Online Courses</p>
-            <p className="text-muted-foreground">Figma, Interaction Design, Typography</p>
+            <p className="font-display text-foreground">Licence LEA - Anglais - Japonais </p>
+            <p className="text-muted-foreground"> Université de Strasbourg - 2021 - 2025 </p>
           </div>
         </div>
       </MiniWindow>
@@ -40,12 +40,12 @@ const AboutCluster = () => (
       >
         <div className="space-y-3 text-sm">
           <div>
-            <p className="font-display text-foreground">Freelance Projects</p>
-            <p className="text-muted-foreground">Brand identity, UI redesigns — 2023–now</p>
+            <p className="font-display text-foreground">Developpeur Web - Stage </p>
+            <p className="text-muted-foreground">Association ADECAWEB - Janvier 2026 - Aujourd'hui </p>
           </div>
           <div>
-            <p className="font-display text-foreground">Design Internship</p>
-            <p className="text-muted-foreground">UI mockups & user research — Summer 2023</p>
+            <p className="font-display text-foreground">Assistant Communication - Stage </p>
+            <p className="text-muted-foreground"> Université de Strasbourg - Avril 2025 - Juin 2025 </p>
           </div>
         </div>
       </MiniWindow>
