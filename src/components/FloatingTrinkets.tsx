@@ -79,7 +79,7 @@ const DraggableTrinket = ({ trinket }: { trinket: TrinketData }) => {
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
       onPointerCancel={handlePointerUp}
-      className="absolute select-none touch-none"
+      className="absolute select-none touch-none pointer-events-auto"
       style={{
         left: `${pos.x}%`,
         top: `${pos.y}%`,
@@ -97,12 +97,10 @@ const DraggableTrinket = ({ trinket }: { trinket: TrinketData }) => {
 };
 
 const FloatingTrinkets = () => (
-  <div className="fixed inset-0 z-[1] overflow-hidden" style={{ pointerEvents: 'none' }}>
-    <div style={{ pointerEvents: 'auto' }} className="w-full h-full relative">
-      {initialTrinkets.map((t) => (
-        <DraggableTrinket key={t.id} trinket={t} />
-      ))}
-    </div>
+  <div className="fixed inset-0 z-[1] overflow-hidden pointer-events-none">
+    {initialTrinkets.map((t) => (
+      <DraggableTrinket key={t.id} trinket={t} />
+    ))}
   </div>
 );
 
