@@ -6,46 +6,46 @@
 
 @layer base {
   :root {
-    --background: 40 33% 96%;
+    --background: 80 25% 95%;
     --foreground: 220 20% 18%;
 
-    --card: 40 30% 97%;
+    --card: 80 20% 96%;
     --card-foreground: 220 20% 18%;
 
-    --popover: 40 30% 97%;
+    --popover: 80 20% 96%;
     --popover-foreground: 220 20% 18%;
 
-    --primary: 145 35% 50%;
-    --primary-foreground: 40 33% 96%;
+    --primary: 130 40% 42%;
+    --primary-foreground: 80 25% 96%;
 
-    --secondary: 340 50% 85%;
-    --secondary-foreground: 340 30% 30%;
+    --secondary: 340 55% 82%;
+    --secondary-foreground: 340 40% 28%;
 
-    --muted: 40 20% 92%;
-    --muted-foreground: 220 10% 50%;
+    --muted: 80 15% 90%;
+    --muted-foreground: 220 10% 45%;
 
-    --accent: 210 40% 82%;
-    --accent-foreground: 210 40% 20%;
+    --accent: 340 45% 85%;
+    --accent-foreground: 340 40% 25%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 40 20% 88%;
-    --input: 40 20% 88%;
-    --ring: 145 35% 50%;
+    --border: 130 15% 82%;
+    --input: 130 15% 82%;
+    --ring: 130 40% 42%;
 
-    --radius: 1rem;
+    --radius: 1.2rem;
 
     /* Custom tokens */
-    --sage: 145 25% 78%;
-    --sage-dark: 145 20% 45%;
-    --lavender: 250 30% 88%;
-    --peach: 20 60% 90%;
-    --cream: 40 40% 95%;
-    --soft-pink: 340 50% 90%;
-    --window-bg: 40 30% 98%;
-    --window-border: 340 20% 88%;
-    --window-header: 145 20% 92%;
+    --sage: 130 35% 72%;
+    --sage-dark: 130 30% 40%;
+    --lavender: 280 35% 85%;
+    --peach: 20 65% 88%;
+    --cream: 60 40% 94%;
+    --soft-pink: 340 60% 88%;
+    --window-bg: 80 20% 97%;
+    --window-border: 130 20% 82%;
+    --window-header: 130 30% 88%;
     --grain-opacity: 0.03;
 
     --font-display: 'Space Mono', monospace;
@@ -94,17 +94,17 @@
   background: hsl(var(--window-header));
   border-bottom: 1px solid hsl(var(--window-border));
   border-radius: var(--radius) var(--radius) 0 0;
-  padding: 6px 12px;
+  padding: 8px 14px;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 7px;
   font-family: var(--font-display);
-  font-size: 0.7rem;
+  font-size: 0.8rem;
 }
 
 .window-dot {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
 }
 
@@ -120,10 +120,10 @@
 .pill-tag {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  padding: 4px 14px;
+  gap: 6px;
+  padding: 6px 16px;
   border-radius: 9999px;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   font-family: var(--font-display);
   border: 1px solid hsl(var(--border));
   background: hsl(var(--card));

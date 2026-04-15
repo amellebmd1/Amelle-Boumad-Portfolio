@@ -33,9 +33,9 @@ const ProjectCard = ({ title, description, role, tools, image, videoSrc, classNa
       >
         <div className="mini-window-header">
           <span className="window-dot bg-sage" />
-          <span className="window-dot bg-peach" />
+          <span className="window-dot bg-soft-pink" />
           <span className="window-dot bg-lavender" />
-          <span className="ml-2 text-muted-foreground truncate">{title}</span>
+          <span className="ml-2 text-muted-foreground truncate text-xs">{title}</span>
         </div>
         <div className="relative aspect-[4/3] overflow-hidden bg-muted">
           {videoSrc ? (
@@ -56,17 +56,17 @@ const ProjectCard = ({ title, description, role, tools, image, videoSrc, classNa
               className={`w-full h-full object-cover transition-transform duration-700 ${hovered ? 'scale-105' : 'scale-100'}`}
             />
           ) : (
-            <div className="w-full h-full flex items-center justify-center text-muted-foreground font-display text-sm">
+            <div className="w-full h-full flex items-center justify-center text-muted-foreground font-display text-lg">
               ✦
             </div>
           )}
         </div>
-        <div className="p-3">
-          <h3 className="font-display text-sm">{title}</h3>
-          <p className="text-xs text-muted-foreground mt-1 line-clamp-2">{description}</p>
-          <div className="flex flex-wrap gap-1.5 mt-2">
+        <div className="p-4">
+          <h3 className="font-display text-base">{title}</h3>
+          <p className="text-sm text-muted-foreground mt-2 line-clamp-2">{description}</p>
+          <div className="flex flex-wrap gap-2 mt-3">
             {tools.map(t => (
-              <span key={t} className="pill-tag text-[10px] py-0.5 px-2">{t}</span>
+              <span key={t} className="pill-tag text-xs py-1 px-3">{t}</span>
             ))}
           </div>
         </div>
@@ -79,17 +79,17 @@ const ProjectCard = ({ title, description, role, tools, image, videoSrc, classNa
           onClick={() => setExpanded(false)}
         >
           <div
-            className="mini-window max-w-2xl w-full mx-4 max-h-[85vh] overflow-y-auto animate-zoom-reveal"
+            className="mini-window max-w-3xl w-full mx-4 max-h-[85vh] overflow-y-auto animate-zoom-reveal"
             onClick={e => e.stopPropagation()}
           >
             <div className="mini-window-header">
               <span className="window-dot bg-sage" />
-              <span className="window-dot bg-peach" />
+              <span className="window-dot bg-soft-pink" />
               <span className="window-dot bg-lavender" />
               <span className="ml-2 text-muted-foreground">{title}</span>
               <button
                 onClick={() => setExpanded(false)}
-                className="ml-auto text-muted-foreground hover:text-foreground text-xs"
+                className="ml-auto text-muted-foreground hover:text-foreground text-sm"
               >
                 ✕
               </button>
@@ -101,14 +101,14 @@ const ProjectCard = ({ title, description, role, tools, image, videoSrc, classNa
                 <img src={image} alt={title} className="w-full h-full object-cover" />
               ) : null}
             </div>
-            <div className="p-6 space-y-3">
-              <h2 className="font-display text-lg">{title}</h2>
-              <p className="text-sm text-muted-foreground">{description}</p>
-              <div className="text-xs space-y-1">
+            <div className="p-8 space-y-4">
+              <h2 className="font-display text-xl">{title}</h2>
+              <p className="text-base text-muted-foreground">{description}</p>
+              <div className="text-sm space-y-2">
                 <p><span className="font-display">Role:</span> <span className="text-muted-foreground">{role}</span></p>
-                <div className="flex flex-wrap gap-1.5">
+                <div className="flex flex-wrap gap-2">
                   {tools.map(t => (
-                    <span key={t} className="pill-tag">{t}</span>
+                    <span key={t} className="pill-tag text-sm">{t}</span>
                   ))}
                 </div>
               </div>

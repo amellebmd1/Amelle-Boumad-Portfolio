@@ -30,20 +30,20 @@ const HeroSection = ({ onEnter }: HeroSectionProps) => {
       }`}
     >
       {/* Blurred floating trinkets */}
-      <img src={star} alt="" className="absolute w-16 top-[20%] left-[20%] opacity-10 blur-sm animate-float" />
-      <img src={clover} alt="" className="absolute w-14 top-[30%] right-[25%] opacity-10 blur-sm animate-float-slow" />
-      <img src={cdDisc} alt="" className="absolute w-20 bottom-[25%] left-[30%] opacity-8 blur-sm animate-spin-slow" />
-      <img src={star} alt="" className="absolute w-10 bottom-[30%] right-[20%] opacity-10 blur-sm animate-float" style={{ animationDelay: '1s' }} />
+      <img src={star} alt="" className="absolute w-24 top-[20%] left-[20%] opacity-15 blur-sm animate-float" />
+      <img src={clover} alt="" className="absolute w-20 top-[30%] right-[25%] opacity-15 blur-sm animate-float-slow" />
+      <img src={cdDisc} alt="" className="absolute w-28 bottom-[25%] left-[30%] opacity-10 blur-sm animate-spin-slow" />
+      <img src={star} alt="" className="absolute w-16 bottom-[30%] right-[20%] opacity-15 blur-sm animate-float" style={{ animationDelay: '1s' }} />
 
       {/* Center content */}
-      <div className="text-center z-10 space-y-4">
-        <p className="font-display text-xs tracking-[0.3em] text-muted-foreground uppercase">
+      <div className="text-center z-10 space-y-6">
+        <p className="font-display text-sm tracking-[0.3em] text-muted-foreground uppercase">
           UX/UI Designer
         </p>
-        <h1 className="font-display text-3xl md:text-5xl tracking-tight text-foreground">
+        <h1 className="font-display text-5xl md:text-7xl tracking-tight text-foreground">
           Amelle Boumad
         </h1>
-        <p className="font-display text-xs tracking-[0.2em] text-muted-foreground">
+        <p className="font-display text-sm tracking-[0.2em] text-muted-foreground">
           — Portfolio —
         </p>
       </div>
@@ -51,7 +51,7 @@ const HeroSection = ({ onEnter }: HeroSectionProps) => {
       {/* Enter prompt */}
       <button
         onClick={handleEnter}
-        className="mt-12 z-10 pill-tag text-muted-foreground hover:text-foreground transition-colors animate-pulse"
+        className="mt-16 z-10 pill-tag text-base px-6 py-2 text-muted-foreground hover:text-foreground transition-colors animate-pulse"
       >
         ✦ scroll or click to enter ✦
       </button>
