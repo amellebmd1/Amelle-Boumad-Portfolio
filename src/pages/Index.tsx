@@ -4,6 +4,7 @@ import FloatingTrinkets from '@/components/FloatingTrinkets';
 import AboutCluster from '@/components/AboutCluster';
 import SkillsCollection from '@/components/SkillsCollection';
 import ProjectsBoard from '@/components/ProjectsBoard';
+import SocialMediaProjects from '@/components/SocialMediaProjects';
 import FloatingNav from '@/components/FloatingNav';
 import Footer from '@/components/Footer';
 
@@ -34,6 +35,10 @@ const Index = () => {
 
           <section id="projects">
             <ProjectsBoard />
+          </section>
+
+          <section id="social">
+            <SocialMediaProjects />
           </section>
 
           <Footer />
