@@ -2,6 +2,7 @@ import { useState } from 'react';
 import HeroSection from '@/components/HeroSection';
 import FloatingTrinkets from '@/components/FloatingTrinkets';
 import AboutCluster from '@/components/AboutCluster';
+import AsciiArt from '@/components/AsciiArt';
 import SkillsCollection from '@/components/SkillsCollection';
 import ProjectsBoard from '@/components/ProjectsBoard';
 import SocialMediaProjects from '@/components/SocialMediaProjects';
@@ -25,6 +26,8 @@ const Index = () => {
       >
 
         <main className="relative z-10 pt-8">
+          <AsciiArt />
+
           <section id="about">
             <AboutCluster />
           </section>
