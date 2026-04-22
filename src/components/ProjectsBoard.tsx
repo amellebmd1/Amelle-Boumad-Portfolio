@@ -4,7 +4,7 @@ import project3 from '@/assets/project-3.jpg';
 import adecawebPreview from '@/assets/adecaweb-preview.png';
 import adecawebFull from '@/assets/adecaweb-full.jpeg';
 import anastasiaAffiche from '@/assets/anastasia-affiche.png';
-import leaVideoThumb from '@/assets/lea-video-thumb.png';
+import leaImacMockup from '@/assets/lea-imac-mockup.jpg';
 
 const projects = [
   {
@@ -21,7 +21,7 @@ const projects = [
     role: 'Monteur',
     tools: ['Premiere Pro', 'Traduction', 'Sous-titrage'],
     image: project2,
-    imacPreviewImage: leaVideoThumb,
+    fullMockupImage: leaImacMockup,
     youtubeId: 'Mj0ZjhuMwYI',
   },
   {
