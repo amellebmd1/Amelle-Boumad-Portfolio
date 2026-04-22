@@ -1,13 +1,12 @@
 import { useState, useCallback, useRef } from 'react';
-import miffy from '@/assets/miffy.png';
-import helloKitty from '@/assets/hello-kitty.png';
-import sonnyAngel from '@/assets/sonny-angel.png';
-import pinkApple from '@/assets/pink-apple.png';
-import pinkHeart from '@/assets/pink-heart.png';
-import pinkBow from '@/assets/pink-bow.png';
-import clover from '@/assets/clover.png';
-import star from '@/assets/star.png';
-import cdDisc from '@/assets/cd-disc.png';
+import miffy from '@/assets/trinket-miffy.png';
+import frog from '@/assets/trinket-frog.png';
+import angel from '@/assets/trinket-angel.png';
+import apple from '@/assets/trinket-apple.png';
+import heart from '@/assets/trinket-heart.png';
+import ladybug from '@/assets/trinket-ladybug.png';
+import clover from '@/assets/trinket-clover.png';
+import star from '@/assets/trinket-star.png';
 
 interface TrinketData {
   id: number;
@@ -22,18 +21,18 @@ interface TrinketData {
 }
 
 const initialTrinkets: TrinketData[] = [
-  { id: 0, src: miffy, alt: 'miffy', size: 100, x: 5, y: 10, rotation: -5, anim: 'float', duration: '6s' },
-  { id: 1, src: helloKitty, alt: 'hello kitty', size: 90, x: 85, y: 15, rotation: 8, anim: 'float-slow', duration: '8s' },
-  { id: 2, src: sonnyAngel, alt: 'angel', size: 95, x: 8, y: 45, rotation: -3, anim: 'float', duration: '7s' },
-  { id: 3, src: pinkApple, alt: 'apple', size: 80, x: 90, y: 35, rotation: 12, anim: 'float-slow', duration: '9s' },
-  { id: 4, src: pinkHeart, alt: 'heart', size: 70, x: 15, y: 70, rotation: -8, anim: 'float', duration: '5s' },
-  { id: 5, src: pinkBow, alt: 'bow', size: 85, x: 82, y: 60, rotation: 5, anim: 'float-slow', duration: '7s' },
+  { id: 0, src: miffy, alt: 'miffy stamp', size: 100, x: 5, y: 10, rotation: -5, anim: 'float', duration: '6s' },
+  { id: 1, src: frog, alt: 'frog', size: 90, x: 85, y: 15, rotation: 8, anim: 'float-slow', duration: '8s' },
+  { id: 2, src: angel, alt: 'angel', size: 95, x: 8, y: 45, rotation: -3, anim: 'float', duration: '7s' },
+  { id: 3, src: apple, alt: 'apple keychain', size: 80, x: 90, y: 35, rotation: 12, anim: 'float-slow', duration: '9s' },
+  { id: 4, src: heart, alt: 'heart', size: 70, x: 15, y: 70, rotation: -8, anim: 'float', duration: '5s' },
+  { id: 5, src: ladybug, alt: 'ladybug', size: 85, x: 82, y: 60, rotation: 5, anim: 'float-slow', duration: '7s' },
   { id: 6, src: clover, alt: 'clover', size: 65, x: 50, y: 8, rotation: 15, anim: 'float', duration: '6s' },
   { id: 7, src: star, alt: 'star', size: 55, x: 70, y: 80, rotation: -12, anim: 'sparkle', duration: '3s' },
-  { id: 8, src: cdDisc, alt: 'cd', size: 75, x: 3, y: 88, rotation: 0, anim: 'spin-slow', duration: '20s' },
+  { id: 8, src: ladybug, alt: 'ladybug', size: 75, x: 3, y: 88, rotation: 0, anim: 'float', duration: '7s' },
   { id: 9, src: star, alt: 'star', size: 45, x: 40, y: 55, rotation: 20, anim: 'sparkle', duration: '4s' },
-  { id: 10, src: pinkHeart, alt: 'heart', size: 50, x: 60, y: 25, rotation: -15, anim: 'float', duration: '5.5s' },
-  { id: 11, src: miffy, alt: 'miffy', size: 70, x: 92, y: 85, rotation: 10, anim: 'float-slow', duration: '8s' },
+  { id: 10, src: heart, alt: 'heart', size: 50, x: 60, y: 25, rotation: -15, anim: 'float', duration: '5.5s' },
+  { id: 11, src: frog, alt: 'frog', size: 70, x: 92, y: 85, rotation: 10, anim: 'float-slow', duration: '8s' },
 ];
 
 const DraggableTrinket = ({ trinket }: { trinket: TrinketData }) => {
