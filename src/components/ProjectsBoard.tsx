@@ -1,7 +1,7 @@
 import ProjectCard from './ProjectCard';
-import project1 from '@/assets/project-1.jpg';
 import project2 from '@/assets/project-2.jpg';
 import project3 from '@/assets/project-3.jpg';
+import adecawebPreview from '@/assets/adecaweb-preview.png';
 
 const projects = [
   {
@@ -9,12 +9,7 @@ const projects = [
     description: 'Refonte du site web pour association étudiante ADECAWEB sur Wordpress. ',
     role: 'Web Developpeur',
     tools: ['Figma', 'WordPress', 'HTML/CSS'],
-    image: project1,
-    figmaEmbedUrl:
-      'https://www.figma.com/embed?embed_host=share&url=' +
-      encodeURIComponent(
-        'https://www.figma.com/proto/p7wYkT4q9WzmLLW6OiF9TH/Refonte-Site-ADECAWEB?node-id=816-137&p=f&scaling=scale-down&content-scaling=fixed&page-id=19%3A2&starting-point-node-id=816%3A137'
-      ),
+    macPreviewImage: adecawebPreview,
   },
   {
     title: 'Interview étudiants LEA - Série de vidéos',

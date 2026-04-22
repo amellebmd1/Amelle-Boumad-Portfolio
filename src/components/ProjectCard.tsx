@@ -8,11 +8,11 @@ interface ProjectCardProps {
   image?: string;
   videoSrc?: string;
   youtubeId?: string;
-  figmaEmbedUrl?: string;
+  macPreviewImage?: string;
   className?: string;
 }
 
-const ProjectCard = ({ title, description, role, tools, image, videoSrc, youtubeId, figmaEmbedUrl, className = '' }: ProjectCardProps) => {
+const ProjectCard = ({ title, description, role, tools, image, videoSrc, youtubeId, macPreviewImage, className = '' }: ProjectCardProps) => {
   const [hovered, setHovered] = useState(false);
   const [expanded, setExpanded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -40,33 +40,24 @@ const ProjectCard = ({ title, description, role, tools, image, videoSrc, youtube
           <span className="ml-2 text-muted-foreground truncate text-xs">{title}</span>
         </div>
         <div className="relative aspect-[4/3] overflow-hidden bg-muted">
-          {figmaEmbedUrl ? (
-            // Mac mockup preview
+          {macPreviewImage ? (
+            // MacBook Air mockup preview
             <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-muted to-background p-4">
               <div className="relative w-full">
-                {/* Mac screen */}
-                <div className="bg-foreground rounded-md p-1.5 shadow-xl">
+                {/* MacBook screen */}
+                <div className="bg-foreground rounded-lg p-1.5 shadow-xl">
                   <div className="bg-background rounded-sm overflow-hidden aspect-[16/10] relative">
-                    {image ? (
-                      <img
-                        src={image}
-                        alt={title}
-                        loading="lazy"
-                        className={`w-full h-full object-cover transition-transform duration-700 ${hovered ? 'scale-105' : 'scale-100'}`}
-                      />
-                    ) : (
-                      <iframe
-                        src={figmaEmbedUrl}
-                        title={title}
-                        loading="lazy"
-                        className="w-full h-full border-0 pointer-events-none"
-                      />
-                    )}
+                    <img
+                      src={macPreviewImage}
+                      alt={title}
+                      loading="lazy"
+                      className={`w-full h-full object-cover object-top transition-transform duration-700 ${hovered ? 'scale-105' : 'scale-100'}`}
+                    />
                   </div>
                 </div>
-                {/* Mac base / stand */}
-                <div className="mx-auto h-1.5 bg-foreground/80 rounded-b-sm" style={{ width: '20%' }} />
-                <div className="mx-auto h-1 bg-foreground/60 rounded-b-md" style={{ width: '35%' }} />
+                {/* MacBook base / hinge */}
+                <div className="mx-auto h-1 bg-foreground/70 rounded-b-md" style={{ width: '110%', marginLeft: '-5%' }} />
+                <div className="mx-auto h-1 bg-foreground/40 rounded-b-lg" style={{ width: '25%' }} />
               </div>
             </div>
           ) : videoSrc ? (
@@ -110,7 +101,7 @@ const ProjectCard = ({ title, description, role, tools, image, videoSrc, youtube
           onClick={() => setExpanded(false)}
         >
           <div
-            className={`mini-window w-full mx-4 max-h-[90vh] overflow-y-auto animate-zoom-reveal ${figmaEmbedUrl ? 'max-w-6xl' : 'max-w-3xl'}`}
+            className={`mini-window w-full mx-4 max-h-[90vh] overflow-y-auto animate-zoom-reveal ${macPreviewImage ? 'max-w-5xl' : 'max-w-3xl'}`}
             onClick={e => e.stopPropagation()}
           >
             <div className="mini-window-header">
@@ -125,14 +116,9 @@ const ProjectCard = ({ title, description, role, tools, image, videoSrc, youtube
                 ✕
               </button>
             </div>
-            <div className={`overflow-hidden bg-muted ${figmaEmbedUrl ? 'h-[70vh]' : 'aspect-video'}`}>
-              {figmaEmbedUrl ? (
-                <iframe
-                  src={figmaEmbedUrl}
-                  title={title}
-                  allowFullScreen
-                  className="w-full h-full border-0"
-                />
+            <div className={`overflow-hidden bg-muted ${macPreviewImage ? 'max-h-[75vh] overflow-y-auto' : 'aspect-video'}`}>
+              {macPreviewImage ? (
+                <img src={macPreviewImage} alt={title} className="w-full h-auto object-contain" />
               ) : youtubeId ? (
                 <iframe
                   src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&mute=1`}
