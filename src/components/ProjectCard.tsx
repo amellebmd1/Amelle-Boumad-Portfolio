@@ -64,11 +64,11 @@ const ProjectCard = ({ title, description, role, tools, image, videoSrc, youtube
             </div>
           ) : phonePreviewImage ? (
             // iPhone mockup preview
-            <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-muted to-background p-4">
-              <div className="relative bg-foreground rounded-[2rem] p-2 shadow-xl" style={{ width: '42%', aspectRatio: '9/19' }}>
+            <div className="w-full h-full flex items-center justify-center bg-soft-pink/40 p-4">
+              <div className="relative bg-foreground rounded-[1.75rem] p-1.5 shadow-xl" style={{ width: '32%', aspectRatio: '9/19' }}>
                 {/* Notch */}
-                <div className="absolute top-2 left-1/2 -translate-x-1/2 w-1/3 h-3 bg-foreground rounded-b-xl z-10" />
-                <div className="bg-background rounded-[1.5rem] overflow-hidden w-full h-full relative">
+                <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-1/3 h-2.5 bg-foreground rounded-b-xl z-10" />
+                <div className="bg-background rounded-[1.4rem] overflow-hidden w-full h-full relative">
                   <img
                     src={phonePreviewImage}
                     alt={title}
