@@ -2,6 +2,7 @@ import ProjectCard from './ProjectCard';
 import project2 from '@/assets/project-2.jpg';
 import project3 from '@/assets/project-3.jpg';
 import adecawebPreview from '@/assets/adecaweb-preview.png';
+import adecawebFull from '@/assets/adecaweb-full.jpeg';
 
 const projects = [
   {
@@ -10,6 +11,7 @@ const projects = [
     role: 'Web Developpeur',
     tools: ['Figma', 'WordPress', 'HTML/CSS'],
     macPreviewImage: adecawebPreview,
+    expandedImage: adecawebFull,
   },
   {
     title: 'Interview étudiants LEA - Série de vidéos',

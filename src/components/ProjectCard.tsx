@@ -9,10 +9,11 @@ interface ProjectCardProps {
   videoSrc?: string;
   youtubeId?: string;
   macPreviewImage?: string;
+  expandedImage?: string;
   className?: string;
 }
 
-const ProjectCard = ({ title, description, role, tools, image, videoSrc, youtubeId, macPreviewImage, className = '' }: ProjectCardProps) => {
+const ProjectCard = ({ title, description, role, tools, image, videoSrc, youtubeId, macPreviewImage, expandedImage, className = '' }: ProjectCardProps) => {
   const [hovered, setHovered] = useState(false);
   const [expanded, setExpanded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -118,7 +119,7 @@ const ProjectCard = ({ title, description, role, tools, image, videoSrc, youtube
             </div>
             <div className={`overflow-hidden bg-muted ${macPreviewImage ? 'max-h-[75vh] overflow-y-auto' : 'aspect-video'}`}>
               {macPreviewImage ? (
-                <img src={macPreviewImage} alt={title} className="w-full h-auto object-contain" />
+                <img src={expandedImage ?? macPreviewImage} alt={title} className="w-full h-auto object-contain" />
               ) : youtubeId ? (
                 <iframe
                   src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&mute=1`}
