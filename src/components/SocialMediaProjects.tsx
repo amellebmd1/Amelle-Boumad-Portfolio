@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
 import { ChevronUp, ChevronDown } from 'lucide-react';
-import video1 from '@/assets/tiktok-1.mov';
-import video2 from '@/assets/tiktok-2.mov';
+import video1 from '@/assets/tiktok-1.mp4';
+import video2 from '@/assets/tiktok-2.mp4';
 import video3 from '@/assets/tiktok-3.mp4';
+import video4 from '@/assets/tiktok-4.mp4';
 
-const videos = [video1, video2, video3];
+const videos = [video1, video2, video3, video4];
 
 const SocialMediaProjects = () => {
   const [index, setIndex] = useState(0);
