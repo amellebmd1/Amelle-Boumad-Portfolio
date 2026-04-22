@@ -1,7 +1,4 @@
 import { useState, useEffect } from "react";
-import star from "@/assets/trinket-star.png";
-import clover from "@/assets/trinket-clover.png";
-import ladybug from "@/assets/trinket-ladybug.png";
 import heart from "@/assets/trinket-heart.png";
 import frog from "@/assets/trinket-frog.png";
 
@@ -31,17 +28,6 @@ const HeroSection = ({ onEnter }: HeroSectionProps) => {
         entered ? "scale-110 opacity-0 pointer-events-none" : "scale-100 opacity-100"
       }`}
     >
-      {/* Blurred floating trinkets */}
-      <img src={star} alt="" className="absolute w-24 top-[20%] left-[20%] opacity-30 blur-sm animate-float" />
-      <img src={clover} alt="" className="absolute w-20 top-[30%] right-[25%] opacity-30 blur-sm animate-float-slow" />
-      <img src={ladybug} alt="" className="absolute w-24 bottom-[25%] left-[30%] opacity-25 blur-sm animate-float-slow" />
-      <img
-        src={star}
-        alt=""
-        className="absolute w-16 bottom-[30%] right-[20%] opacity-30 blur-sm animate-float"
-        style={{ animationDelay: "1s" }}
-      />
-
       {/* Center content */}
       <div className="text-center z-10 flex flex-col items-center gap-6">
         <p className="font-display text-sm tracking-[0.3em] text-muted-foreground uppercase">Alternante Web Designer</p>
