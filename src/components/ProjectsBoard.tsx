@@ -17,7 +17,7 @@ const projects = [
     role: 'Monteur',
     tools: ['Premiere Pro', 'Traduction', 'Sous-titrage'],
     image: project2,
-    youtubeId: 'dQw4w9WgXcQ',
+    youtubeId: 'Mj0ZjhuMwYI',
   },
   {
     title: 'Interview étudiants LEA — Affiches',
