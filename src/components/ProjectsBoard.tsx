@@ -21,7 +21,7 @@ const projects = [
     role: 'Monteur',
     tools: ['Premiere Pro', 'Traduction', 'Sous-titrage'],
     image: project2,
-    macPreviewImage: leaVideoThumb,
+    imacPreviewImage: leaVideoThumb,
     youtubeId: 'Mj0ZjhuMwYI',
   },
   {
