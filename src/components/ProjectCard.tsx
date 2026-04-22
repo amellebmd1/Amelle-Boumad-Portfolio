@@ -64,12 +64,19 @@ const ProjectCard = ({ title, description, role, tools, image, videoSrc, youtube
               </div>
             </div>
           ) : imacPreviewImage ? (
-            // iMac mockup preview
+            // iMac mockup preview (Apple iMac M1 style)
             <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-muted to-background p-4">
-              <div className="relative w-full flex flex-col items-center">
-                {/* iMac screen — thicker bezel */}
-                <div className="bg-foreground rounded-xl p-2 shadow-xl w-full">
-                  <div className="bg-background rounded-md overflow-hidden aspect-[16/9] relative">
+              <div className="relative w-[88%] flex flex-col items-center">
+                {/* iMac body: thin bezels + screen + chin */}
+                <div
+                  className="w-full rounded-[14px] shadow-2xl overflow-hidden"
+                  style={{
+                    background: '#0a0a0a',
+                    padding: '8px 8px 0 8px',
+                  }}
+                >
+                  {/* Screen */}
+                  <div className="relative bg-background overflow-hidden rounded-[4px] aspect-[16/9]">
                     <img
                       src={imacPreviewImage}
                       alt={title}
@@ -77,15 +84,35 @@ const ProjectCard = ({ title, description, role, tools, image, videoSrc, youtube
                       className={`w-full h-full object-cover transition-transform duration-700 ${hovered ? 'scale-105' : 'scale-100'}`}
                     />
                   </div>
-                  {/* Chin */}
-                  <div className="h-3 mt-1 flex items-center justify-center">
-                    <div className="w-1.5 h-1.5 rounded-full bg-background/30" />
+                  {/* Chin (aluminum bar with Apple logo dot) */}
+                  <div
+                    className="w-full flex items-center justify-center"
+                    style={{
+                      height: '22px',
+                      background: 'linear-gradient(180deg, #d8d8d8 0%, #b8b8b8 100%)',
+                    }}
+                  >
+                    <div className="w-2 h-2 rounded-full" style={{ background: '#7a7a7a' }} />
                   </div>
                 </div>
-                {/* Neck */}
-                <div className="w-2 h-3 bg-foreground/70" />
-                {/* Stand base */}
-                <div className="h-1.5 bg-foreground/80 rounded-b-full" style={{ width: '40%' }} />
+                {/* Neck — flat aluminum stem */}
+                <div
+                  style={{
+                    width: '22%',
+                    height: '14px',
+                    background: 'linear-gradient(180deg, #c8c8c8 0%, #9a9a9a 100%)',
+                  }}
+                />
+                {/* Stand base — wide flat foot */}
+                <div
+                  className="rounded-[3px]"
+                  style={{
+                    width: '46%',
+                    height: '6px',
+                    background: 'linear-gradient(180deg, #b8b8b8 0%, #8a8a8a 100%)',
+                    boxShadow: '0 4px 8px rgba(0,0,0,0.15)',
+                  }}
+                />
               </div>
             </div>
           ) : phonePreviewImage ? (
