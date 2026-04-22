@@ -7,10 +7,11 @@ interface ProjectCardProps {
   tools: string[];
   image?: string;
   videoSrc?: string;
+  youtubeId?: string;
   className?: string;
 }
 
-const ProjectCard = ({ title, description, role, tools, image, videoSrc, className = '' }: ProjectCardProps) => {
+const ProjectCard = ({ title, description, role, tools, image, videoSrc, youtubeId, className = '' }: ProjectCardProps) => {
   const [hovered, setHovered] = useState(false);
   const [expanded, setExpanded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -95,7 +96,15 @@ const ProjectCard = ({ title, description, role, tools, image, videoSrc, classNa
               </button>
             </div>
             <div className="aspect-video overflow-hidden bg-muted">
-              {videoSrc ? (
+              {youtubeId ? (
+                <iframe
+                  src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&mute=1`}
+                  title={title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              ) : videoSrc ? (
                 <video src={videoSrc} controls autoPlay muted loop playsInline className="w-full h-full object-cover" />
               ) : image ? (
                 <img src={image} alt={title} className="w-full h-full object-cover" />
