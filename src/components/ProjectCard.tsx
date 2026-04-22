@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import macbookMockup from '@/assets/macbook-mockup.png';
 
 interface ProjectCardProps {
   title: string;
@@ -64,54 +65,32 @@ const ProjectCard = ({ title, description, role, tools, image, videoSrc, youtube
               </div>
             </div>
           ) : imacPreviewImage ? (
-            // iMac mockup preview (Apple iMac M1 style)
-            <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-muted to-background p-4">
-              <div className="relative w-[88%] flex flex-col items-center">
-                {/* iMac body: thin bezels + screen + chin */}
+            // MacBook mockup preview (real PNG mockup overlay)
+            <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-muted to-background p-2">
+              <div className="relative w-full" style={{ aspectRatio: '1 / 1' }}>
+                {/* Thumbnail positioned exactly under the screen cutout */}
                 <div
-                  className="w-full rounded-[14px] shadow-2xl overflow-hidden"
+                  className="absolute overflow-hidden bg-background"
                   style={{
-                    background: '#0a0a0a',
-                    padding: '8px 8px 0 8px',
+                    left: '11.93%',
+                    top: '19.58%',
+                    width: '75.62%',
+                    height: '39.80%',
                   }}
                 >
-                  {/* Screen */}
-                  <div className="relative bg-background overflow-hidden rounded-[4px] aspect-[16/9]">
-                    <img
-                      src={imacPreviewImage}
-                      alt={title}
-                      loading="lazy"
-                      className={`w-full h-full object-cover transition-transform duration-700 ${hovered ? 'scale-105' : 'scale-100'}`}
-                    />
-                  </div>
-                  {/* Chin (aluminum bar with Apple logo dot) */}
-                  <div
-                    className="w-full flex items-center justify-center"
-                    style={{
-                      height: '22px',
-                      background: 'linear-gradient(180deg, #d8d8d8 0%, #b8b8b8 100%)',
-                    }}
-                  >
-                    <div className="w-2 h-2 rounded-full" style={{ background: '#7a7a7a' }} />
-                  </div>
+                  <img
+                    src={imacPreviewImage}
+                    alt={title}
+                    loading="lazy"
+                    className={`w-full h-full object-cover transition-transform duration-700 ${hovered ? 'scale-105' : 'scale-100'}`}
+                  />
                 </div>
-                {/* Neck — flat aluminum stem */}
-                <div
-                  style={{
-                    width: '22%',
-                    height: '14px',
-                    background: 'linear-gradient(180deg, #c8c8c8 0%, #9a9a9a 100%)',
-                  }}
-                />
-                {/* Stand base — wide flat foot */}
-                <div
-                  className="rounded-[3px]"
-                  style={{
-                    width: '46%',
-                    height: '6px',
-                    background: 'linear-gradient(180deg, #b8b8b8 0%, #8a8a8a 100%)',
-                    boxShadow: '0 4px 8px rgba(0,0,0,0.15)',
-                  }}
+                {/* MacBook PNG overlay */}
+                <img
+                  src={macbookMockup}
+                  alt=""
+                  aria-hidden="true"
+                  className="absolute inset-0 w-full h-full object-contain pointer-events-none"
                 />
               </div>
             </div>
