@@ -3,6 +3,7 @@ import project2 from '@/assets/project-2.jpg';
 import project3 from '@/assets/project-3.jpg';
 import adecawebPreview from '@/assets/adecaweb-preview.png';
 import adecawebFull from '@/assets/adecaweb-full.jpeg';
+import anastasiaAffiche from '@/assets/anastasia-affiche.png';
 
 const projects = [
   {
@@ -27,6 +28,8 @@ const projects = [
     role: 'Designeur',
     tools: ['Illustrator', 'Photoshop', 'Typography'],
     image: project3,
+    phonePreviewImage: anastasiaAffiche,
+    expandedImage: anastasiaAffiche,
   },
 ];
 
