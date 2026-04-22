@@ -1,28 +1,60 @@
 import { useState, useEffect, useRef } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronUp, ChevronDown } from 'lucide-react';
+import video1 from '@/assets/tiktok-1.mov';
+import video2 from '@/assets/tiktok-2.mov';
+import video3 from '@/assets/tiktok-3.mp4';
 
-// Replace these IDs with real TikTok video IDs (the long number from the URL: tiktok.com/@user/video/<ID>)
-const tiktoks = [
-  { id: '7290000000000000001', author: 'amelle' },
-  { id: '7290000000000000002', author: 'amelle' },
-  { id: '7290000000000000003', author: 'amelle' },
-  { id: '7290000000000000004', author: 'amelle' },
-];
+const videos = [video1, video2, video3];
 
 const SocialMediaProjects = () => {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
-  const trackRef = useRef<HTMLDivElement>(null);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
-  const next = () => setIndex(i => (i + 1) % tiktoks.length);
-  const prev = () => setIndex(i => (i - 1 + tiktoks.length) % tiktoks.length);
+  const next = () => setIndex(i => (i + 1) % videos.length);
+  const prev = () => setIndex(i => (i - 1 + videos.length) % videos.length);
 
-  // auto-scroll
+  // Auto-advance every 8s when not paused
   useEffect(() => {
     if (paused) return;
-    const t = setInterval(next, 5000);
+    const t = setInterval(next, 8000);
     return () => clearInterval(t);
   }, [paused]);
+
+  // Play only the active video, pause the others
+  useEffect(() => {
+    videoRefs.current.forEach((v, i) => {
+      if (!v) return;
+      if (i === index) {
+        v.currentTime = 0;
+        v.play().catch(() => {});
+      } else {
+        v.pause();
+      }
+    });
+  }, [index]);
+
+  // Wheel / swipe vertical navigation on the phone
+  const wheelLock = useRef(false);
+  const handleWheel = (e: React.WheelEvent) => {
+    if (wheelLock.current) return;
+    if (Math.abs(e.deltaY) < 20) return;
+    wheelLock.current = true;
+    if (e.deltaY > 0) next();
+    else prev();
+    setTimeout(() => (wheelLock.current = false), 600);
+  };
+
+  const touchStartY = useRef(0);
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartY.current = e.touches[0].clientY;
+  };
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    const dy = touchStartY.current - e.changedTouches[0].clientY;
+    if (Math.abs(dy) < 40) return;
+    if (dy > 0) next();
+    else prev();
+  };
 
   return (
     <div className="w-full max-w-6xl mx-auto py-16 px-6">
@@ -36,15 +68,6 @@ const SocialMediaProjects = () => {
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
-        {/* Prev button */}
-        <button
-          onClick={prev}
-          aria-label="Vidéo précédente"
-          className="z-10 w-10 h-10 rounded-full bg-card/80 backdrop-blur-md border border-border shadow-lg flex items-center justify-center hover:bg-sage/50 transition-colors shrink-0"
-        >
-          <ChevronLeft className="w-5 h-5" />
-        </button>
-
         {/* iPhone mockup */}
         <div className="relative shrink-0">
           <div
@@ -58,58 +81,79 @@ const SocialMediaProjects = () => {
             <span className="absolute right-[-3px] top-32 w-1 h-16 bg-foreground rounded-r" />
 
             {/* Screen */}
-            <div className="relative w-full h-full bg-black rounded-[2.3rem] overflow-hidden">
+            <div
+              className="relative w-full h-full bg-black rounded-[2.3rem] overflow-hidden"
+              onWheel={handleWheel}
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+            >
               {/* Notch */}
               <div className="absolute top-2 left-1/2 -translate-x-1/2 w-24 h-6 bg-foreground rounded-full z-20" />
 
-              {/* TikTok carousel */}
+              {/* Vertical TikTok-style feed */}
               <div
-                ref={trackRef}
-                className="flex h-full transition-transform duration-700 ease-out"
-                style={{ transform: `translateX(-${index * 100}%)` }}
+                className="flex flex-col h-full transition-transform duration-700 ease-out"
+                style={{ transform: `translateY(-${index * 100}%)` }}
               >
-                {tiktoks.map((t, i) => (
-                  <div key={t.id + i} className="w-full h-full shrink-0 relative">
-                    <iframe
-                      src={`https://www.tiktok.com/embed/v2/${t.id}`}
-                      title={`TikTok ${i + 1}`}
-                      allow="autoplay; encrypted-media; picture-in-picture"
-                      allowFullScreen
-                      className="w-full h-full border-0"
+                {videos.map((src, i) => (
+                  <div key={i} className="w-full h-full shrink-0 relative bg-black">
+                    <video
+                      ref={el => (videoRefs.current[i] = el)}
+                      src={src}
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                      className="w-full h-full object-cover"
                     />
+                    {/* TikTok-style overlay */}
+                    <div className="absolute bottom-6 left-4 right-16 text-white drop-shadow-lg pointer-events-none">
+                      <p className="font-semibold text-sm">@amelle</p>
+                      <p className="text-xs opacity-90 mt-1">Création vidéo · montage</p>
+                    </div>
                   </div>
+                ))}
+              </div>
+
+              {/* Vertical nav arrows inside phone */}
+              <button
+                onClick={prev}
+                aria-label="Vidéo précédente"
+                className="absolute top-12 right-3 z-30 w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/40 transition-colors"
+              >
+                <ChevronUp className="w-4 h-4" />
+              </button>
+              <button
+                onClick={next}
+                aria-label="Vidéo suivante"
+                className="absolute bottom-12 right-3 z-30 w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/40 transition-colors"
+              >
+                <ChevronDown className="w-4 h-4" />
+              </button>
+
+              {/* Vertical progress dots */}
+              <div className="absolute left-3 top-1/2 -translate-y-1/2 flex flex-col gap-2 z-30">
+                {videos.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setIndex(i)}
+                    aria-label={`Vidéo ${i + 1}`}
+                    className={`w-1.5 rounded-full transition-all ${
+                      i === index ? 'h-6 bg-white' : 'h-1.5 bg-white/40'
+                    }`}
+                  />
                 ))}
               </div>
             </div>
           </div>
-
-          {/* Dots */}
-          <div className="flex justify-center gap-2 mt-6">
-            {tiktoks.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setIndex(i)}
-                aria-label={`Aller à la vidéo ${i + 1}`}
-                className={`h-2 rounded-full transition-all ${
-                  i === index ? 'w-6 bg-sage-dark' : 'w-2 bg-border'
-                }`}
-              />
-            ))}
-          </div>
         </div>
-
-        {/* Next button */}
-        <button
-          onClick={next}
-          aria-label="Vidéo suivante"
-          className="z-10 w-10 h-10 rounded-full bg-card/80 backdrop-blur-md border border-border shadow-lg flex items-center justify-center hover:bg-sage/50 transition-colors shrink-0"
-        >
-          <ChevronRight className="w-5 h-5" />
-        </button>
       </div>
 
       <p className="text-center text-sm text-muted-foreground mt-6">
         Création de contenu vidéo court format · Montage · Sound design
+      </p>
+      <p className="text-center text-xs text-muted-foreground/70 mt-2">
+        Scrolle ↑↓ ou clique sur les flèches dans le téléphone
       </p>
     </div>
   );
