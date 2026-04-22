@@ -9,12 +9,13 @@ interface ProjectCardProps {
   videoSrc?: string;
   youtubeId?: string;
   macPreviewImage?: string;
+  imacPreviewImage?: string;
   phonePreviewImage?: string;
   expandedImage?: string;
   className?: string;
 }
 
-const ProjectCard = ({ title, description, role, tools, image, videoSrc, youtubeId, macPreviewImage, phonePreviewImage, expandedImage, className = '' }: ProjectCardProps) => {
+const ProjectCard = ({ title, description, role, tools, image, videoSrc, youtubeId, macPreviewImage, imacPreviewImage, phonePreviewImage, expandedImage, className = '' }: ProjectCardProps) => {
   const [hovered, setHovered] = useState(false);
   const [expanded, setExpanded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -60,6 +61,31 @@ const ProjectCard = ({ title, description, role, tools, image, videoSrc, youtube
                 {/* MacBook base / hinge */}
                 <div className="mx-auto h-1 bg-foreground/70 rounded-b-md" style={{ width: '110%', marginLeft: '-5%' }} />
                 <div className="mx-auto h-1 bg-foreground/40 rounded-b-lg" style={{ width: '25%' }} />
+              </div>
+            </div>
+          ) : imacPreviewImage ? (
+            // iMac mockup preview
+            <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-muted to-background p-4">
+              <div className="relative w-full flex flex-col items-center">
+                {/* iMac screen — thicker bezel */}
+                <div className="bg-foreground rounded-xl p-2 shadow-xl w-full">
+                  <div className="bg-background rounded-md overflow-hidden aspect-[16/9] relative">
+                    <img
+                      src={imacPreviewImage}
+                      alt={title}
+                      loading="lazy"
+                      className={`w-full h-full object-cover transition-transform duration-700 ${hovered ? 'scale-105' : 'scale-100'}`}
+                    />
+                  </div>
+                  {/* Chin */}
+                  <div className="h-3 mt-1 flex items-center justify-center">
+                    <div className="w-1.5 h-1.5 rounded-full bg-background/30" />
+                  </div>
+                </div>
+                {/* Neck */}
+                <div className="w-2 h-3 bg-foreground/70" />
+                {/* Stand base */}
+                <div className="h-1.5 bg-foreground/80 rounded-b-full" style={{ width: '40%' }} />
               </div>
             </div>
           ) : phonePreviewImage ? (
@@ -134,7 +160,7 @@ const ProjectCard = ({ title, description, role, tools, image, videoSrc, youtube
                 ✕
               </button>
             </div>
-            <div className={`overflow-hidden bg-muted ${(macPreviewImage || phonePreviewImage) && !youtubeId && !videoSrc ? 'max-h-[75vh] overflow-y-auto flex items-center justify-center' : 'aspect-video'}`}>
+            <div className={`overflow-hidden bg-muted ${(macPreviewImage || imacPreviewImage || phonePreviewImage) && !youtubeId && !videoSrc ? 'max-h-[75vh] overflow-y-auto flex items-center justify-center' : 'aspect-video'}`}>
               {youtubeId ? (
                 <iframe
                   src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&mute=1`}
@@ -145,8 +171,8 @@ const ProjectCard = ({ title, description, role, tools, image, videoSrc, youtube
                 />
               ) : videoSrc ? (
                 <video src={videoSrc} controls autoPlay muted loop playsInline className="w-full h-full object-cover" />
-              ) : macPreviewImage || phonePreviewImage ? (
-                <img src={expandedImage ?? macPreviewImage ?? phonePreviewImage} alt={title} className="w-full h-auto object-contain" />
+              ) : macPreviewImage || imacPreviewImage || phonePreviewImage ? (
+                <img src={expandedImage ?? macPreviewImage ?? imacPreviewImage ?? phonePreviewImage} alt={title} className="w-full h-auto object-contain" />
               ) : image ? (
                 <img src={image} alt={title} className="w-full h-full object-cover" />
               ) : null}
