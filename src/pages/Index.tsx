@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import HeroSection from '@/components/HeroSection';
 import FloatingTrinkets from '@/components/FloatingTrinkets';
 import AboutCluster from '@/components/AboutCluster';
@@ -9,18 +10,21 @@ import FloatingNav from '@/components/FloatingNav';
 import Footer from '@/components/Footer';
 
 const Index = () => {
-  const handleEnter = () => {
-    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
+  const [entered, setEntered] = useState(false);
 
   return (
     <div className="grain min-h-screen relative">
       <FloatingTrinkets />
       <FloatingNav />
 
-      <HeroSection onEnter={handleEnter} />
+      <HeroSection onEnter={() => setEntered(true)} />
 
-      <div>
+      <div
+        className={`transition-all duration-1000 ease-out ${
+          entered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8 pointer-events-none'
+        }`}
+      >
+
         <main className="relative z-10 pt-8">
           <section id="about">
             <AboutCluster />

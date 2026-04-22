@@ -24,8 +24,8 @@ const HeroSection = ({ onEnter }: HeroSectionProps) => {
 
   return (
     <div
-      className={`relative z-20 flex min-h-screen flex-col items-center justify-center bg-background px-6 transition-all duration-700 ease-out ${
-        entered ? "opacity-100" : "opacity-100"
+      className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-background transition-all duration-1000 ease-out ${
+        entered ? "scale-110 opacity-0 pointer-events-none" : "scale-100 opacity-100"
       }`}
     >
       {/* Center content */}
