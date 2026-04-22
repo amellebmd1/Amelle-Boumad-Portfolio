@@ -40,7 +40,36 @@ const ProjectCard = ({ title, description, role, tools, image, videoSrc, youtube
           <span className="ml-2 text-muted-foreground truncate text-xs">{title}</span>
         </div>
         <div className="relative aspect-[4/3] overflow-hidden bg-muted">
-          {videoSrc ? (
+          {figmaEmbedUrl ? (
+            // Mac mockup preview
+            <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-muted to-background p-4">
+              <div className="relative w-full">
+                {/* Mac screen */}
+                <div className="bg-foreground rounded-md p-1.5 shadow-xl">
+                  <div className="bg-background rounded-sm overflow-hidden aspect-[16/10] relative">
+                    {image ? (
+                      <img
+                        src={image}
+                        alt={title}
+                        loading="lazy"
+                        className={`w-full h-full object-cover transition-transform duration-700 ${hovered ? 'scale-105' : 'scale-100'}`}
+                      />
+                    ) : (
+                      <iframe
+                        src={figmaEmbedUrl}
+                        title={title}
+                        loading="lazy"
+                        className="w-full h-full border-0 pointer-events-none"
+                      />
+                    )}
+                  </div>
+                </div>
+                {/* Mac base / stand */}
+                <div className="mx-auto h-1.5 bg-foreground/80 rounded-b-sm" style={{ width: '20%' }} />
+                <div className="mx-auto h-1 bg-foreground/60 rounded-b-md" style={{ width: '35%' }} />
+              </div>
+            </div>
+          ) : videoSrc ? (
             <video
               ref={videoRef}
               src={videoSrc}
