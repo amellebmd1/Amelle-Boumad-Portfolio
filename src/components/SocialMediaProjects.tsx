@@ -98,15 +98,20 @@ const SocialMediaProjects = () => {
               >
                 {videos.map((src, i) => (
                   <div key={i} className="w-full h-full shrink-0 relative bg-black">
-                    <video
-                      ref={el => (videoRefs.current[i] = el)}
-                      src={src}
-                      muted
-                      loop
-                      playsInline
-                      preload="metadata"
-                      className="w-full h-full object-cover"
-                    />
+                    {/* Square video centered in the screen */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="relative w-full aspect-square overflow-hidden">
+                        <video
+                          ref={el => (videoRefs.current[i] = el)}
+                          src={src}
+                          muted
+                          loop
+                          playsInline
+                          preload="metadata"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </div>
                     {/* TikTok-style overlay */}
                     <div className="absolute bottom-6 left-4 right-16 text-white drop-shadow-lg pointer-events-none">
                       <p className="font-semibold text-sm">@amelle</p>
