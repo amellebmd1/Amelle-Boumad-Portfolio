@@ -9,11 +9,12 @@ interface ProjectCardProps {
   videoSrc?: string;
   youtubeId?: string;
   macPreviewImage?: string;
+  phonePreviewImage?: string;
   expandedImage?: string;
   className?: string;
 }
 
-const ProjectCard = ({ title, description, role, tools, image, videoSrc, youtubeId, macPreviewImage, expandedImage, className = '' }: ProjectCardProps) => {
+const ProjectCard = ({ title, description, role, tools, image, videoSrc, youtubeId, macPreviewImage, phonePreviewImage, expandedImage, className = '' }: ProjectCardProps) => {
   const [hovered, setHovered] = useState(false);
   const [expanded, setExpanded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -61,6 +62,22 @@ const ProjectCard = ({ title, description, role, tools, image, videoSrc, youtube
                 <div className="mx-auto h-1 bg-foreground/40 rounded-b-lg" style={{ width: '25%' }} />
               </div>
             </div>
+          ) : phonePreviewImage ? (
+            // iPhone mockup preview
+            <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-muted to-background p-4">
+              <div className="relative bg-foreground rounded-[2rem] p-2 shadow-xl" style={{ width: '42%', aspectRatio: '9/19' }}>
+                {/* Notch */}
+                <div className="absolute top-2 left-1/2 -translate-x-1/2 w-1/3 h-3 bg-foreground rounded-b-xl z-10" />
+                <div className="bg-background rounded-[1.5rem] overflow-hidden w-full h-full relative">
+                  <img
+                    src={phonePreviewImage}
+                    alt={title}
+                    loading="lazy"
+                    className={`w-full h-full object-cover transition-transform duration-700 ${hovered ? 'scale-105' : 'scale-100'}`}
+                  />
+                </div>
+              </div>
+            </div>
           ) : videoSrc ? (
             <video
               ref={videoRef}
@@ -102,7 +119,7 @@ const ProjectCard = ({ title, description, role, tools, image, videoSrc, youtube
           onClick={() => setExpanded(false)}
         >
           <div
-            className={`mini-window w-full mx-4 max-h-[90vh] overflow-y-auto animate-zoom-reveal ${macPreviewImage ? 'max-w-5xl' : 'max-w-3xl'}`}
+            className={`mini-window w-full mx-4 max-h-[90vh] overflow-y-auto animate-zoom-reveal ${macPreviewImage || phonePreviewImage ? 'max-w-5xl' : 'max-w-3xl'}`}
             onClick={e => e.stopPropagation()}
           >
             <div className="mini-window-header">
@@ -117,9 +134,9 @@ const ProjectCard = ({ title, description, role, tools, image, videoSrc, youtube
                 ✕
               </button>
             </div>
-            <div className={`overflow-hidden bg-muted ${macPreviewImage ? 'max-h-[75vh] overflow-y-auto' : 'aspect-video'}`}>
-              {macPreviewImage ? (
-                <img src={expandedImage ?? macPreviewImage} alt={title} className="w-full h-auto object-contain" />
+            <div className={`overflow-hidden bg-muted ${macPreviewImage || phonePreviewImage ? 'max-h-[75vh] overflow-y-auto flex items-center justify-center' : 'aspect-video'}`}>
+              {macPreviewImage || phonePreviewImage ? (
+                <img src={expandedImage ?? macPreviewImage ?? phonePreviewImage} alt={title} className="w-full h-auto object-contain" />
               ) : youtubeId ? (
                 <iframe
                   src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&mute=1`}
