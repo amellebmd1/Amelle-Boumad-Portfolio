@@ -10,6 +10,11 @@ const projects = [
     role: 'Web Developpeur',
     tools: ['Figma', 'WordPress', 'HTML/CSS'],
     image: project1,
+    figmaEmbedUrl:
+      'https://www.figma.com/embed?embed_host=share&url=' +
+      encodeURIComponent(
+        'https://www.figma.com/proto/p7wYkT4q9WzmLLW6OiF9TH/Refonte-Site-ADECAWEB?node-id=816-137&p=f&scaling=scale-down&content-scaling=fixed&page-id=19%3A2&starting-point-node-id=816%3A137'
+      ),
   },
   {
     title: 'Interview étudiants LEA - Série de vidéos',
