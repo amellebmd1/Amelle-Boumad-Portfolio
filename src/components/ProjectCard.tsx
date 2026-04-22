@@ -134,10 +134,8 @@ const ProjectCard = ({ title, description, role, tools, image, videoSrc, youtube
                 ✕
               </button>
             </div>
-            <div className={`overflow-hidden bg-muted ${macPreviewImage || phonePreviewImage ? 'max-h-[75vh] overflow-y-auto flex items-center justify-center' : 'aspect-video'}`}>
-              {macPreviewImage || phonePreviewImage ? (
-                <img src={expandedImage ?? macPreviewImage ?? phonePreviewImage} alt={title} className="w-full h-auto object-contain" />
-              ) : youtubeId ? (
+            <div className={`overflow-hidden bg-muted ${(macPreviewImage || phonePreviewImage) && !youtubeId && !videoSrc ? 'max-h-[75vh] overflow-y-auto flex items-center justify-center' : 'aspect-video'}`}>
+              {youtubeId ? (
                 <iframe
                   src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&mute=1`}
                   title={title}
@@ -147,6 +145,8 @@ const ProjectCard = ({ title, description, role, tools, image, videoSrc, youtube
                 />
               ) : videoSrc ? (
                 <video src={videoSrc} controls autoPlay muted loop playsInline className="w-full h-full object-cover" />
+              ) : macPreviewImage || phonePreviewImage ? (
+                <img src={expandedImage ?? macPreviewImage ?? phonePreviewImage} alt={title} className="w-full h-auto object-contain" />
               ) : image ? (
                 <img src={image} alt={title} className="w-full h-full object-cover" />
               ) : null}
