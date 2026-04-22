@@ -110,7 +110,7 @@ const ProjectCard = ({ title, description, role, tools, image, videoSrc, youtube
           onClick={() => setExpanded(false)}
         >
           <div
-            className="mini-window max-w-3xl w-full mx-4 max-h-[85vh] overflow-y-auto animate-zoom-reveal"
+            className={`mini-window w-full mx-4 max-h-[90vh] overflow-y-auto animate-zoom-reveal ${figmaEmbedUrl ? 'max-w-6xl' : 'max-w-3xl'}`}
             onClick={e => e.stopPropagation()}
           >
             <div className="mini-window-header">
@@ -125,8 +125,15 @@ const ProjectCard = ({ title, description, role, tools, image, videoSrc, youtube
                 ✕
               </button>
             </div>
-            <div className="aspect-video overflow-hidden bg-muted">
-              {youtubeId ? (
+            <div className={`overflow-hidden bg-muted ${figmaEmbedUrl ? 'h-[70vh]' : 'aspect-video'}`}>
+              {figmaEmbedUrl ? (
+                <iframe
+                  src={figmaEmbedUrl}
+                  title={title}
+                  allowFullScreen
+                  className="w-full h-full border-0"
+                />
+              ) : youtubeId ? (
                 <iframe
                   src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&mute=1`}
                   title={title}
