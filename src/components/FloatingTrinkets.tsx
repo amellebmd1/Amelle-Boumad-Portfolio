@@ -87,7 +87,7 @@ const DraggableTrinket = ({ trinket }: { trinket: TrinketData }) => {
         width: trinket.size,
         height: trinket.size,
         transform: `rotate(${trinket.rotation}deg) scale(${dragging ? 1.2 : 1})`,
-        opacity: dragging ? 0.9 : 0.6,
+        opacity: dragging ? 1 : 0.85,
         cursor: dragging ? 'grabbing' : 'grab',
         zIndex: dragging ? 50 : 1,
         filter: dragging ? 'drop-shadow(0 10px 20px rgba(0,0,0,0.18))' : 'drop-shadow(0 3px 6px rgba(0,0,0,0.1))',
