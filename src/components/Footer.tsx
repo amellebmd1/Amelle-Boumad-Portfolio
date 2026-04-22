@@ -21,6 +21,15 @@ const Footer = () => (
         >
           LinkedIn
         </a>
+        <a
+          href="/CV-Amelle-Boumad.pdf"
+          target="_blank"
+          rel="noreferrer"
+          download
+          className="pill-tag text-sm px-5 py-2 hover:bg-peach transition-colors"
+        >
+          ⬇ Mon CV
+        </a>
       </div>
 
       {/* Decorative cluster */}
