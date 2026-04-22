@@ -9,11 +9,12 @@ interface ProjectCardProps {
   videoSrc?: string;
   youtubeId?: string;
   macPreviewImage?: string;
+  phonePreviewImage?: string;
   expandedImage?: string;
   className?: string;
 }
 
-const ProjectCard = ({ title, description, role, tools, image, videoSrc, youtubeId, macPreviewImage, expandedImage, className = '' }: ProjectCardProps) => {
+const ProjectCard = ({ title, description, role, tools, image, videoSrc, youtubeId, macPreviewImage, phonePreviewImage, expandedImage, className = '' }: ProjectCardProps) => {
   const [hovered, setHovered] = useState(false);
   const [expanded, setExpanded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
