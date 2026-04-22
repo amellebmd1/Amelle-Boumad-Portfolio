@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import star from "@/assets/star.png";
-import clover from "@/assets/clover.png";
-import cdDisc from "@/assets/cd-disc.png";
-import pinkBow from "@/assets/pink-bow.png";
+import star from "@/assets/trinket-star.png";
+import clover from "@/assets/trinket-clover.png";
+import ladybug from "@/assets/trinket-ladybug.png";
+import heart from "@/assets/trinket-heart.png";
+import frog from "@/assets/trinket-frog.png";
 
 interface HeroSectionProps {
   onEnter: () => void;
@@ -31,13 +32,13 @@ const HeroSection = ({ onEnter }: HeroSectionProps) => {
       }`}
     >
       {/* Blurred floating trinkets */}
-      <img src={star} alt="" className="absolute w-24 top-[20%] left-[20%] opacity-15 blur-sm animate-float" />
-      <img src={clover} alt="" className="absolute w-20 top-[30%] right-[25%] opacity-15 blur-sm animate-float-slow" />
-      <img src={cdDisc} alt="" className="absolute w-28 bottom-[25%] left-[30%] opacity-10 blur-sm animate-spin-slow" />
+      <img src={star} alt="" className="absolute w-24 top-[20%] left-[20%] opacity-30 blur-sm animate-float" />
+      <img src={clover} alt="" className="absolute w-20 top-[30%] right-[25%] opacity-30 blur-sm animate-float-slow" />
+      <img src={ladybug} alt="" className="absolute w-24 bottom-[25%] left-[30%] opacity-25 blur-sm animate-float-slow" />
       <img
         src={star}
         alt=""
-        className="absolute w-16 bottom-[30%] right-[20%] opacity-15 blur-sm animate-float"
+        className="absolute w-16 bottom-[30%] right-[20%] opacity-30 blur-sm animate-float"
         style={{ animationDelay: "1s" }}
       />
 
@@ -45,15 +46,15 @@ const HeroSection = ({ onEnter }: HeroSectionProps) => {
       <div className="text-center z-10 flex flex-col items-center gap-6">
         <p className="font-display text-sm tracking-[0.3em] text-muted-foreground uppercase">Alternante Web Designer</p>
 
-        {/* Name with bows aligned on each side */}
+        {/* Name with trinkets aligned on each side */}
         <div className="flex items-center gap-5">
-          <img src={pinkBow} alt="" className="w-14 md:w-16 opacity-70 animate-float" />
+          <img src={frog} alt="" className="w-14 md:w-16 opacity-80 animate-float" />
           <h1 className="font-display text-5xl md:text-7xl tracking-tight text-foreground">Amelle Boumad</h1>
           <img
-            src={pinkBow}
+            src={heart}
             alt=""
-            className="w-14 md:w-16 opacity-70 animate-float"
-            style={{ animationDelay: "0.5s", transform: "scaleX(-1)" }}
+            className="w-14 md:w-16 opacity-80 animate-float"
+            style={{ animationDelay: "0.5s" }}
           />
         </div>
 
