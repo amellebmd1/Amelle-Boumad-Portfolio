@@ -1,8 +1,8 @@
 import ProjectCard from './ProjectCard';
 import project2 from '@/assets/project-2.jpg';
 import project3 from '@/assets/project-3.jpg';
-import adecawebPreview from '@/assets/adecaweb-preview.png';
 import adecawebFull from '@/assets/adecaweb-full.jpeg';
+import adecawebMockup from '@/assets/adecaweb-mockup.jpg';
 import anastasiaAffiche from '@/assets/anastasia-affiche.png';
 import leaImacMockup from '@/assets/lea-imac-mockup.jpg';
 
@@ -12,7 +12,7 @@ const projects = [
     description: 'Refonte du site web pour association étudiante ADECAWEB sur Wordpress. ',
     role: 'Web Developpeur',
     tools: ['Figma', 'WordPress', 'HTML/CSS'],
-    macPreviewImage: adecawebPreview,
+    fullMockupImage: adecawebMockup,
     expandedImage: adecawebFull,
   },
   {
