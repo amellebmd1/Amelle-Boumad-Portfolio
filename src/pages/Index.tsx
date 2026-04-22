@@ -26,11 +26,11 @@ const Index = () => {
       >
 
         <main className="relative z-10 pt-8">
-          <AsciiArt />
-
           <section id="about">
             <AboutCluster />
           </section>
+
+          <AsciiArt />
 
           <section id="skills">
             <SkillsCollection />
