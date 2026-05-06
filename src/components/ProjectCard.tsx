@@ -212,7 +212,7 @@ const ProjectCard = ({ title, description, longDescription, role, tools, instagr
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={(e) => e.stopPropagation()}
-                  className="inline-flex items-center gap-3 mt-2 px-4 py-3 rounded-xl border border-border bg-background hover:bg-muted transition-colors group"
+                  className="inline-flex items-center gap-3 mt-2 px-4 py-3 rounded-xl border border-border bg-background hover:bg-muted hover:scale-110 active:scale-105 transition-all duration-300 ease-out group origin-left"
                 >
                   <span
                     className="flex items-center justify-center w-9 h-9 rounded-lg text-white"
@@ -240,7 +240,7 @@ const ProjectCard = ({ title, description, longDescription, role, tools, instagr
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={(e) => e.stopPropagation()}
-                  className="inline-flex items-center gap-3 mt-2 px-4 py-3 rounded-xl border border-border bg-background hover:bg-muted transition-colors group"
+                  className="inline-flex items-center gap-3 mt-2 px-4 py-3 rounded-xl border border-border bg-background hover:bg-muted hover:scale-110 active:scale-105 transition-all duration-300 ease-out group origin-left"
                 >
                   <span
                     className="flex items-center justify-center w-9 h-9 rounded-lg text-white"
