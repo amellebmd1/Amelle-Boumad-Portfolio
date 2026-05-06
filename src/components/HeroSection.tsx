@@ -30,7 +30,7 @@ const HeroSection = ({ onEnter }: HeroSectionProps) => {
     >
       {/* Center content */}
       <div className="text-center z-10 flex flex-col items-center gap-6">
-        <p className="font-display text-sm tracking-[0.3em] text-muted-foreground uppercase">Alternante Web Designer</p>
+        <p className="font-display text-sm tracking-[0.3em] text-muted-foreground uppercase">Alternante Vidéo & Communication</p>
 
         {/* Name with trinkets aligned on each side */}
         <div className="flex items-center gap-5">
