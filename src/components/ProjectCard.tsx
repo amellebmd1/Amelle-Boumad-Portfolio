@@ -170,7 +170,7 @@ const ProjectCard = ({ title, description, longDescription, role, tools, instagr
           onClick={() => setExpanded(false)}
         >
           <div
-            className={`mini-window w-full max-h-[95vh] overflow-y-auto animate-zoom-reveal ${youtubeId ? 'mx-3 max-w-none md:w-[92vw] lg:w-[88vw]' : macPreviewImage || phonePreviewImage || fullMockupImage ? 'mx-4 max-w-5xl' : 'mx-4 max-w-3xl'}`}
+            className={`mini-window w-full max-h-[95vh] overflow-y-auto animate-zoom-reveal ${youtubeId ? 'mx-2 max-w-none w-[98vw]' : macPreviewImage || phonePreviewImage || fullMockupImage ? 'mx-4 max-w-5xl' : 'mx-4 max-w-3xl'}`}
             onClick={e => e.stopPropagation()}
           >
             <div className="mini-window-header">
@@ -185,7 +185,7 @@ const ProjectCard = ({ title, description, longDescription, role, tools, instagr
                 ✕
               </button>
             </div>
-            <div className={`overflow-hidden bg-muted ${youtubeId ? 'h-[48vh] min-h-[320px]' : (macPreviewImage || imacPreviewImage || phonePreviewImage || fullMockupImage) && !videoSrc ? 'max-h-[75vh] overflow-y-auto flex items-center justify-center' : 'aspect-video'}`}>
+            <div className={`overflow-hidden bg-muted ${youtubeId ? 'aspect-video' : (macPreviewImage || imacPreviewImage || phonePreviewImage || fullMockupImage) && !videoSrc ? 'max-h-[75vh] overflow-y-auto flex items-center justify-center' : 'aspect-video'}`}>
               {youtubeId ? (
                 <iframe
                   src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&mute=1`}
