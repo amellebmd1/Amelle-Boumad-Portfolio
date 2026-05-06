@@ -8,7 +8,7 @@ const AboutCluster = () => (
         <div className="text-center">
           <h2 className="font-display text-base">Amelle Boumad</h2>
           <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
-            Etudiante en Master CAWEB (communication web et multilingue), je suis à la recherche d'une première opportunité dans le domaine du web.
+            Etudiante en Master CAWEB (communication web et multilingue), je suis à la recherche d'une alternance dans la communication et la vidéo.
           </p>
         </div>
       </MiniWindow>
