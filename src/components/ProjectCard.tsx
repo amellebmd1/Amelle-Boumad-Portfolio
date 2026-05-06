@@ -29,7 +29,11 @@ const ProjectCard = ({ title, description, longDescription, role, tools, instagr
   const handleHover = (isHovering: boolean) => {
     setHovered(isHovering);
     if (videoRef.current) {
-      isHovering ? videoRef.current.play() : videoRef.current.pause();
+      if (isHovering) {
+        videoRef.current.play();
+      } else {
+        videoRef.current.pause();
+      }
     }
   };
 
