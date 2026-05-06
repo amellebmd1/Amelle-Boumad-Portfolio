@@ -170,7 +170,7 @@ const ProjectCard = ({ title, description, longDescription, role, tools, instagr
           onClick={() => setExpanded(false)}
         >
           <div
-            className={`mini-window w-full max-h-[95vh] overflow-y-auto animate-zoom-reveal ${youtubeId || macPreviewImage || phonePreviewImage || fullMockupImage ? 'mx-4 max-w-5xl' : 'mx-4 max-w-3xl'}`}
+            className={`mini-window w-full max-h-[95vh] overflow-y-auto animate-zoom-reveal ${youtubeId ? 'mx-4 max-w-6xl' : macPreviewImage || phonePreviewImage || fullMockupImage ? 'mx-4 max-w-5xl' : 'mx-4 max-w-3xl'}`}
             onClick={e => e.stopPropagation()}
           >
             <div className="mini-window-header">
