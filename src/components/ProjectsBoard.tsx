@@ -14,13 +14,13 @@ const projects = [
     tools: ['Figma', 'WordPress', 'HTML/CSS'],
     fullMockupImage: adecawebMockup,
     expandedImage: adecawebFull,
-    longDescription: `L'ADECAWEB est l'association du Master CAWEB de l'Université de Strasbourg. Elle a pour mission d'animer la vie du master à travers différents événements et projets destinés à rassembler les étudiants.
+    longDescription: `L'ADECAWEB est l'association du Master CAWEB de l'Université de Strasbourg. Elle organise différents événements afin de créer du lien entre les étudiants et de dynamiser la vie du master.
 
-Au sein de l'association, j'ai eu l'occasion d'être impliquée à plusieurs niveaux : en tant que vice-présidente, mais aussi en tant que stagiaire web développeuse lors de la refonte du site internet.
+En parallèle de mon rôle de vice-présidente, j'ai également contribué à la refonte du site internet dans le cadre d'un stage en développement web.
 
-Ce projet avait pour objectif de moderniser l'image de l'association et de proposer une expérience plus actuelle et accessible. J'ai participé à l'ensemble du processus de création : réflexion autour de l'identité visuelle, maquettage sur Figma, intégration et développement sur WordPress, ainsi qu'à la communication de l'association sur les réseaux sociaux.
+L'objectif était de moderniser l'image de l'association à travers une interface plus actuelle et plus claire. J'ai participé aux différentes étapes du projet, du maquettage sur Figma jusqu'au développement sur WordPress, tout en prenant part à la communication sur les réseaux sociaux.
 
-Ce projet m'a permis de travailler à la fois sur des aspects créatifs, techniques et collaboratifs au sein d'une structure étudiante.
+Cette expérience m'a permis de combiner création, développement et travail d'équipe autour d'un projet concret.
 
 Retrouvez les réseaux de l'association ici :`,
     instagramUrl: 'https://www.instagram.com/adecaweb?igsh=MXZxMDdxNDR5dTlxOA==',
