@@ -7,6 +7,7 @@ interface ProjectCardProps {
   longDescription?: string;
   role: string;
   tools: string[];
+  instagramUrl?: string;
   image?: string;
   videoSrc?: string;
   youtubeId?: string;
@@ -18,7 +19,7 @@ interface ProjectCardProps {
   className?: string;
 }
 
-const ProjectCard = ({ title, description, longDescription, role, tools, image, videoSrc, youtubeId, macPreviewImage, imacPreviewImage, phonePreviewImage, fullMockupImage, expandedImage, className = '' }: ProjectCardProps) => {
+const ProjectCard = ({ title, description, longDescription, role, tools, instagramUrl, image, videoSrc, youtubeId, macPreviewImage, imacPreviewImage, phonePreviewImage, fullMockupImage, expandedImage, className = '' }: ProjectCardProps) => {
   const [hovered, setHovered] = useState(false);
   const [expanded, setExpanded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -202,6 +203,34 @@ const ProjectCard = ({ title, description, longDescription, role, tools, image, 
                 <div className="text-sm text-muted-foreground space-y-3 whitespace-pre-line leading-relaxed">
                   {longDescription}
                 </div>
+              )}
+              {instagramUrl && (
+                <a
+                  href={instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="inline-flex items-center gap-3 mt-2 px-4 py-3 rounded-xl border border-border bg-background hover:bg-muted transition-colors group"
+                >
+                  <span
+                    className="flex items-center justify-center w-9 h-9 rounded-lg text-white"
+                    style={{
+                      background:
+                        'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)',
+                    }}
+                    aria-hidden="true"
+                  >
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    </svg>
+                  </span>
+                  <span className="flex flex-col">
+                    <span className="text-xs text-muted-foreground">Instagram</span>
+                    <span className="font-display text-sm group-hover:underline">@adecaweb</span>
+                  </span>
+                </a>
               )}
               <div className="text-sm space-y-2">
                 <p><span className="font-display">Role:</span> <span className="text-muted-foreground">{role}</span></p>
