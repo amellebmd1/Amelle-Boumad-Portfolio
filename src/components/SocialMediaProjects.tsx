@@ -155,9 +155,14 @@ const SocialMediaProjects = () => {
         </div>
       </div>
 
-      <p className="text-center text-sm text-muted-foreground mt-6">
-        Création de contenu vidéo court format · Montage
-      </p>
+      <div className="max-w-2xl mx-auto mt-8 space-y-4 text-sm text-muted-foreground leading-relaxed">
+        <p>
+          Réalisation de montages vidéo personnels au format court pour des plateformes comme TikTok et Instagram Reels (type "édits").
+        </p>
+        <p>
+          À travers ces créations, j'ai pu développer mes compétences en montage et en création de contenus adaptés aux réseaux sociaux. L'ensemble des vidéos publiées a généré plus de 400 000 vues et 116 000 mentions "J'aime".
+        </p>
+      </div>
     </div>
   );
 };
