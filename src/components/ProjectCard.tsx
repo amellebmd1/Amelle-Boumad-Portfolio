@@ -8,6 +8,8 @@ interface ProjectCardProps {
   role: string;
   tools: string[];
   instagramUrl?: string;
+  youtubeChannelUrl?: string;
+  youtubeChannelHandle?: string;
   image?: string;
   videoSrc?: string;
   youtubeId?: string;
@@ -19,7 +21,7 @@ interface ProjectCardProps {
   className?: string;
 }
 
-const ProjectCard = ({ title, description, longDescription, role, tools, instagramUrl, image, videoSrc, youtubeId, macPreviewImage, imacPreviewImage, phonePreviewImage, fullMockupImage, expandedImage, className = '' }: ProjectCardProps) => {
+const ProjectCard = ({ title, description, longDescription, role, tools, instagramUrl, youtubeChannelUrl, youtubeChannelHandle, image, videoSrc, youtubeId, macPreviewImage, imacPreviewImage, phonePreviewImage, fullMockupImage, expandedImage, className = '' }: ProjectCardProps) => {
   const [hovered, setHovered] = useState(false);
   const [expanded, setExpanded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -229,6 +231,29 @@ const ProjectCard = ({ title, description, longDescription, role, tools, instagr
                   <span className="flex flex-col">
                     <span className="text-xs text-muted-foreground">Instagram</span>
                     <span className="font-display text-sm group-hover:underline">@adecaweb</span>
+                  </span>
+                </a>
+              )}
+              {youtubeChannelUrl && (
+                <a
+                  href={youtubeChannelUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="inline-flex items-center gap-3 mt-2 px-4 py-3 rounded-xl border border-border bg-background hover:bg-muted transition-colors group"
+                >
+                  <span
+                    className="flex items-center justify-center w-9 h-9 rounded-lg text-white"
+                    style={{ background: '#FF0000' }}
+                    aria-hidden="true"
+                  >
+                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+                      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                    </svg>
+                  </span>
+                  <span className="flex flex-col">
+                    <span className="text-xs text-muted-foreground">YouTube</span>
+                    <span className="font-display text-sm group-hover:underline">{youtubeChannelHandle ?? 'Voir la chaîne'}</span>
                   </span>
                 </a>
               )}
