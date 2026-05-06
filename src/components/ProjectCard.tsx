@@ -185,16 +185,62 @@ const ProjectCard = ({ title, description, longDescription, role, tools, instagr
                 ✕
               </button>
             </div>
-            <div className={`overflow-hidden bg-muted ${youtubeId ? 'aspect-video' : (macPreviewImage || imacPreviewImage || phonePreviewImage || fullMockupImage) && !videoSrc ? 'max-h-[75vh] overflow-y-auto flex items-center justify-center' : 'aspect-video'}`}>
-              {youtubeId ? (
-                <iframe
-                  src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&mute=1`}
-                  title={title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                />
-              ) : videoSrc ? (
+            {youtubeId ? (
+              <div className="grid md:grid-cols-2 gap-0">
+                <div className="bg-muted aspect-video md:aspect-auto md:h-full min-h-[320px]">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&mute=1`}
+                    title={title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full"
+                  />
+                </div>
+                <div className="p-8 space-y-4">
+                  <h2 className="font-display text-xl">{title}</h2>
+                  <p className="text-base text-muted-foreground">{description}</p>
+                  {longDescription && (
+                    <div className="text-sm text-muted-foreground space-y-3 whitespace-pre-line leading-relaxed">
+                      {longDescription}
+                    </div>
+                  )}
+                  {youtubeChannelUrl && (
+                    <a
+                      href={youtubeChannelUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center gap-3 mt-2 px-4 py-3 rounded-xl border border-border bg-background hover:bg-muted hover:scale-110 active:scale-105 transition-all duration-300 ease-out group origin-left"
+                    >
+                      <span
+                        className="flex items-center justify-center w-9 h-9 rounded-lg text-white"
+                        style={{ background: '#FF0000' }}
+                        aria-hidden="true"
+                      >
+                        <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+                          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                        </svg>
+                      </span>
+                      <span className="flex flex-col">
+                        <span className="text-xs text-muted-foreground">YouTube</span>
+                        <span className="font-display text-sm group-hover:underline">{youtubeChannelHandle ?? 'Voir la chaîne'}</span>
+                      </span>
+                    </a>
+                  )}
+                  <div className="text-sm space-y-2">
+                    <p><span className="font-display">Role:</span> <span className="text-muted-foreground">{role}</span></p>
+                    <div className="flex flex-wrap gap-2">
+                      {tools.map(t => (
+                        <span key={t} className="pill-tag text-sm">{t}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ) : (
+            <>
+            <div className={`overflow-hidden bg-muted ${(macPreviewImage || imacPreviewImage || phonePreviewImage || fullMockupImage) && !videoSrc ? 'max-h-[75vh] overflow-y-auto flex items-center justify-center' : 'aspect-video'}`}>
+              {videoSrc ? (
                 <video src={videoSrc} controls autoPlay muted loop playsInline className="w-full h-full object-cover" />
               ) : macPreviewImage || imacPreviewImage || phonePreviewImage || fullMockupImage ? (
                 <img src={expandedImage ?? macPreviewImage ?? imacPreviewImage ?? phonePreviewImage ?? fullMockupImage} alt={title} className="w-full h-auto object-contain" />
@@ -270,6 +316,8 @@ const ProjectCard = ({ title, description, longDescription, role, tools, instagr
                 </div>
               </div>
             </div>
+            </>
+            )}
           </div>
         </div>
       )}
