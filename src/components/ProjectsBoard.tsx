@@ -53,6 +53,13 @@ Retrouvez la chaîne YouTube de la licence ici :`,
     image: project3,
     phonePreviewImage: anastasiaAffiche,
     expandedImage: anastasiaAffiche,
+    longDescription: `Dans le cadre de la promotion de la série de vidéos réalisée pour la Faculté des langues, j'ai conçu plusieurs affiches destinées à la communication sur les réseaux sociaux de la licence.
+
+Réalisés sur Photoshop, ces visuels avaient pour objectif d'accompagner la diffusion des interviews en proposant une identité graphique cohérente et adaptée aux formats des réseaux sociaux, tout en respectant les contraintes de la charte graphique de la faculté.
+
+Ce travail m'a permis de développer davantage mes compétences en design visuel et en communication digitale, en réfléchissant à la fois à l'esthétique des contenus et à leur impact sur les plateformes de diffusion.
+
+Amelle Boumad`,
     youtubeChannelUrl: 'https://www.youtube.com/@LEA-UniversitédeStrasbourg',
     youtubeChannelHandle: '@LEA-UniversitédeStrasbourg',
   },
