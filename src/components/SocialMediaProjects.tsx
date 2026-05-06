@@ -156,10 +156,7 @@ const SocialMediaProjects = () => {
       </div>
 
       <p className="text-center text-sm text-muted-foreground mt-6">
-        Création de contenu vidéo court format · Montage · Sound design
-      </p>
-      <p className="text-center text-xs text-muted-foreground/70 mt-2">
-        Scrolle ↑↓ ou clique sur les flèches dans le téléphone
+        Création de contenu vidéo court format · Montage
       </p>
     </div>
   );
