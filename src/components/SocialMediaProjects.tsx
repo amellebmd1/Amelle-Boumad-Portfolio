@@ -155,12 +155,12 @@ const SocialMediaProjects = () => {
         </div>
       </div>
 
-      <div className="max-w-2xl mx-auto mt-8 space-y-4 text-sm text-muted-foreground leading-relaxed">
+      <div className="max-w-2xl mx-auto mt-10 bg-card border border-border rounded-2xl p-6 md:p-8 shadow-sm space-y-4 text-sm text-foreground/80 leading-relaxed">
         <p>
-          Réalisation de montages vidéo personnels au format court pour des plateformes comme TikTok et Instagram Reels (type "édits").
+          Réalisation de montages vidéo personnels au format court pour des plateformes comme TikTok et Instagram Reels (type «&nbsp;édits&nbsp;»).
         </p>
         <p>
-          À travers ces créations, j'ai pu développer mes compétences en montage et en création de contenus adaptés aux réseaux sociaux. L'ensemble des vidéos publiées a généré plus de 400 000 vues et 116 000 mentions "J'aime".
+          À travers ces créations, j'ai pu développer mes compétences en montage et en création de contenus adaptés aux réseaux sociaux. L'ensemble des vidéos publiées a généré plus de <span className="font-semibold text-foreground">400 000 vues</span> et <span className="font-semibold text-foreground">116 000 mentions «&nbsp;J'aime&nbsp;»</span>.
         </p>
       </div>
     </div>
