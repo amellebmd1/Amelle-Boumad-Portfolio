@@ -11,7 +11,7 @@ const Footer = () => (
       <p className="text-base text-muted-foreground">N'hésitez pas à me contacter ✦</p>
       <div className="flex justify-center gap-5">
         <a href="mailto:amelle.bmd1@gmail.com" className="pill-tag text-sm px-5 py-2 hover:bg-sage transition-colors">
-          ✉ Email
+          amelle.bmd1@gmail.com
         </a>
         <a
           href="https://www.linkedin.com/in/amelle-boumad/"
@@ -28,7 +28,7 @@ const Footer = () => (
           download
           className="pill-tag text-sm px-5 py-2 hover:bg-peach transition-colors"
         >
-          ⬇ Mon CV
+          Mon CV
         </a>
       </div>
 
