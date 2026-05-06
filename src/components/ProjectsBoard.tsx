@@ -33,6 +33,15 @@ Retrouvez les réseaux de l'association ici :`,
     image: project2,
     fullMockupImage: leaImacMockup,
     youtubeId: 'Mj0ZjhuMwYI',
+    longDescription: `Lors de cette expérience au sein de la Faculté des langues de l'Université de Strasbourg, j'ai participé à différents projets liés à la communication et à la création de contenus.
+
+L'objectif principal était de réaliser des vidéos sous forme d'interviews d'anciens étudiants afin de promouvoir la licence ainsi que ses débouchés. À travers ce projet, j'ai pu aborder plusieurs aspects de la production audiovisuelle, de la préparation des interviews jusqu'au montage final.
+
+J'ai notamment participé au tournage en studio, travaillé en collaboration avec les équipes techniques son et lumière, puis réalisé le montage des vidéos sur Premiere Pro.
+
+Cette expérience m'a permis de développer mes compétences en création vidéo, en organisation et en travail d'équipe dans un cadre professionnel.
+
+Retrouvez la chaîne YouTube de la licence ici :`,
     youtubeChannelUrl: 'https://www.youtube.com/@LEA-UniversitédeStrasbourg',
     youtubeChannelHandle: '@LEA-UniversitédeStrasbourg',
   },
