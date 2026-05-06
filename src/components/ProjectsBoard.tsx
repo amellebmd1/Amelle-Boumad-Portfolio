@@ -23,6 +23,7 @@ Ce projet avait pour objectif de moderniser l'image de l'association et de propo
 Ce projet m'a permis de travailler à la fois sur des aspects créatifs, techniques et collaboratifs au sein d'une structure étudiante.
 
 Retrouvez les réseaux de l'association ici :`,
+    instagramUrl: 'https://www.instagram.com/adecaweb?igsh=MXZxMDdxNDR5dTlxOA==',
   },
   {
     title: 'Interview étudiants LEA - Série de vidéos',
