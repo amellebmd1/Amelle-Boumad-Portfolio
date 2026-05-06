@@ -100,7 +100,7 @@ const DraggableTrinket = ({ trinket }: { trinket: TrinketData }) => {
 };
 
 const FloatingTrinkets = () => (
-  <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+  <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
     {initialTrinkets.map((t) => (
       <DraggableTrinket key={t.id} trinket={t} />
     ))}
