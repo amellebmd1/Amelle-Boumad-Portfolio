@@ -33,6 +33,8 @@ Retrouvez les réseaux de l'association ici :`,
     image: project2,
     fullMockupImage: leaImacMockup,
     youtubeId: 'Mj0ZjhuMwYI',
+    youtubeChannelUrl: 'https://www.youtube.com/@LEA-UniversitédeStrasbourg',
+    youtubeChannelHandle: '@LEA-UniversitédeStrasbourg',
   },
   {
     title: 'Interview étudiants LEA — Affiches',
@@ -42,6 +44,8 @@ Retrouvez les réseaux de l'association ici :`,
     image: project3,
     phonePreviewImage: anastasiaAffiche,
     expandedImage: anastasiaAffiche,
+    youtubeChannelUrl: 'https://www.youtube.com/@LEA-UniversitédeStrasbourg',
+    youtubeChannelHandle: '@LEA-UniversitédeStrasbourg',
   },
 ];
 
