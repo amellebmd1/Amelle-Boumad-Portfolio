@@ -4,6 +4,7 @@ import macbookMockup from '@/assets/macbook-mockup.png';
 interface ProjectCardProps {
   title: string;
   description: string;
+  longDescription?: string;
   role: string;
   tools: string[];
   image?: string;
@@ -17,7 +18,7 @@ interface ProjectCardProps {
   className?: string;
 }
 
-const ProjectCard = ({ title, description, role, tools, image, videoSrc, youtubeId, macPreviewImage, imacPreviewImage, phonePreviewImage, fullMockupImage, expandedImage, className = '' }: ProjectCardProps) => {
+const ProjectCard = ({ title, description, longDescription, role, tools, image, videoSrc, youtubeId, macPreviewImage, imacPreviewImage, phonePreviewImage, fullMockupImage, expandedImage, className = '' }: ProjectCardProps) => {
   const [hovered, setHovered] = useState(false);
   const [expanded, setExpanded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -197,6 +198,11 @@ const ProjectCard = ({ title, description, role, tools, image, videoSrc, youtube
             <div className="p-8 space-y-4">
               <h2 className="font-display text-xl">{title}</h2>
               <p className="text-base text-muted-foreground">{description}</p>
+              {longDescription && (
+                <div className="text-sm text-muted-foreground space-y-3 whitespace-pre-line leading-relaxed">
+                  {longDescription}
+                </div>
+              )}
               <div className="text-sm space-y-2">
                 <p><span className="font-display">Role:</span> <span className="text-muted-foreground">{role}</span></p>
                 <div className="flex flex-wrap gap-2">
