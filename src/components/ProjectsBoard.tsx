@@ -57,9 +57,7 @@ Retrouvez la chaîne YouTube de la licence ici :`,
 
 Réalisés sur Photoshop, ces visuels avaient pour objectif d'accompagner la diffusion des interviews en proposant une identité graphique cohérente et adaptée aux formats des réseaux sociaux, tout en respectant les contraintes de la charte graphique de la faculté.
 
-Ce travail m'a permis de développer davantage mes compétences en design visuel et en communication digitale, en réfléchissant à la fois à l'esthétique des contenus et à leur impact sur les plateformes de diffusion.
-
-Amelle Boumad`,
+Ce travail m'a permis de développer davantage mes compétences en design visuel et en communication digitale, en réfléchissant à la fois à l'esthétique des contenus et à leur impact sur les plateformes de diffusion.`,
     youtubeChannelUrl: 'https://www.youtube.com/@LEA-UniversitédeStrasbourg',
     youtubeChannelHandle: '@LEA-UniversitédeStrasbourg',
   },
